@@ -1,0 +1,3331 @@
+{
+ "window": {
+  "start_ns": 1793149200007890853,
+  "end_ns": 1793156400894890853,
+  "duration_s": "7200.887",
+  "bounds": "journal",
+  "records": 1282,
+  "journal_lines": 1282,
+  "malformed_lines": 0,
+  "unknown_kinds": {
+   "run_start": 1,
+   "run_stop": 1
+  },
+  "modes": [
+   {
+    "ts_ns": 1793149200007890853,
+    "from": "starting",
+    "to": "running"
+   }
+  ],
+  "holds": []
+ },
+ "fills": {
+  "source": "fill_records",
+  "sides": {
+   "buy": {
+    "booked_fills": 12,
+    "booked_qty": "0.0024",
+    "push_fills": 12,
+    "push_qty": "0.0024",
+    "vwap": "80793.01666667"
+   },
+   "sell": {
+    "booked_fills": 29,
+    "booked_qty": "0.0054",
+    "push_fills": 29,
+    "push_qty": "0.0054",
+    "vwap": "80904.87777778"
+   }
+  },
+  "booked_fills": 41,
+  "fill_pushes": 41,
+  "pushes_without_booked": [],
+  "booked_without_push": [],
+  "qty_mismatches": [],
+  "path": [
+   {
+    "ts_ns": 1793149402423890853,
+    "instrument": 0,
+    "coid": 1793149200007890907,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "0.0002"
+   },
+   {
+    "ts_ns": 1793149402437890853,
+    "instrument": 0,
+    "coid": 1793149200007890909,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "0.0004"
+   },
+   {
+    "ts_ns": 1793149402454890853,
+    "instrument": 0,
+    "coid": 1793149200007890911,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "0.0006"
+   },
+   {
+    "ts_ns": 1793149564448890853,
+    "instrument": 0,
+    "coid": 1793149200007890939,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "0.0008"
+   },
+   {
+    "ts_ns": 1793149656908890853,
+    "instrument": 0,
+    "coid": 1793149200007890949,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "0.0006"
+   },
+   {
+    "ts_ns": 1793149805437890853,
+    "instrument": 0,
+    "coid": 1793149200007890965,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "0.0008"
+   },
+   {
+    "ts_ns": 1793150119260890853,
+    "instrument": 0,
+    "coid": 1793149200007890985,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "0.0006"
+   },
+   {
+    "ts_ns": 1793150131197890853,
+    "instrument": 0,
+    "coid": 1793149200007890997,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "0.0004"
+   },
+   {
+    "ts_ns": 1793150384507890853,
+    "instrument": 0,
+    "coid": 1793149200007891044,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "0.0002"
+   },
+   {
+    "ts_ns": 1793150405599890853,
+    "instrument": 0,
+    "coid": 1793149200007891049,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "0"
+   },
+   {
+    "ts_ns": 1793150553988890853,
+    "instrument": 0,
+    "coid": 1793149200007891075,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0002"
+   },
+   {
+    "ts_ns": 1793151499165890853,
+    "instrument": 0,
+    "coid": 1793149200007891228,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0004"
+   },
+   {
+    "ts_ns": 1793151499245890853,
+    "instrument": 0,
+    "coid": 1793149200007891232,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793151569098890853,
+    "instrument": 0,
+    "coid": 1793149200007891237,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0004"
+   },
+   {
+    "ts_ns": 1793151860871890853,
+    "instrument": 0,
+    "coid": 1793149200007891308,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793151872174890853,
+    "instrument": 0,
+    "coid": 1793149200007891315,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0008"
+   },
+   {
+    "ts_ns": 1793151921425890853,
+    "instrument": 0,
+    "coid": 1793149200007891319,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793152057875890853,
+    "instrument": 0,
+    "coid": 1793149200007891340,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0004"
+   },
+   {
+    "ts_ns": 1793152541193890853,
+    "instrument": 0,
+    "coid": 1793149200007891385,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793153389882890853,
+    "instrument": 0,
+    "coid": 1793149200007891468,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0008"
+   },
+   {
+    "ts_ns": 1793153564962890853,
+    "instrument": 0,
+    "coid": 1793149200007891508,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793153764529890853,
+    "instrument": 0,
+    "coid": 1793149200007891526,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0004"
+   },
+   {
+    "ts_ns": 1793153902038890853,
+    "instrument": 0,
+    "coid": 1793149200007891570,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0006"
+   },
+   {
+    "ts_ns": 1793153902068890853,
+    "instrument": 0,
+    "coid": 1793149200007891572,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0008"
+   },
+   {
+    "ts_ns": 1793153902103890853,
+    "instrument": 0,
+    "coid": 1793149200007891573,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.001"
+   },
+   {
+    "ts_ns": 1793153902206890853,
+    "instrument": 0,
+    "coid": 1793149200007891574,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0012"
+   },
+   {
+    "ts_ns": 1793154130474890853,
+    "instrument": 0,
+    "coid": 1793149200007891640,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0014"
+   },
+   {
+    "ts_ns": 1793154154447890853,
+    "instrument": 0,
+    "coid": 1793149200007891648,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0016"
+   },
+   {
+    "ts_ns": 1793154633634890853,
+    "instrument": 0,
+    "coid": 1793149200007891696,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0018"
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "instrument": 0,
+    "coid": 1793149200007891700,
+    "side": "sell",
+    "delta": "0.0001",
+    "net": "-0.0019"
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "instrument": 0,
+    "coid": 1793149200007891700,
+    "side": "sell",
+    "delta": "0.0001",
+    "net": "-0.002"
+   },
+   {
+    "ts_ns": 1793154859905890853,
+    "instrument": 0,
+    "coid": 1793149200007891737,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0022"
+   },
+   {
+    "ts_ns": 1793155005985890853,
+    "instrument": 0,
+    "coid": 1793149200007891742,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0024"
+   },
+   {
+    "ts_ns": 1793155382193890853,
+    "instrument": 0,
+    "coid": 1793149200007891768,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0026"
+   },
+   {
+    "ts_ns": 1793155503170890853,
+    "instrument": 0,
+    "coid": 1793149200007891787,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0024"
+   },
+   {
+    "ts_ns": 1793155745193890853,
+    "instrument": 0,
+    "coid": 1793149200007891808,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0026"
+   },
+   {
+    "ts_ns": 1793155863431890853,
+    "instrument": 0,
+    "coid": 1793149200007891837,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.0028"
+   },
+   {
+    "ts_ns": 1793155863453890853,
+    "instrument": 0,
+    "coid": 1793149200007891839,
+    "side": "sell",
+    "delta": "0.0002",
+    "net": "-0.003"
+   },
+   {
+    "ts_ns": 1793155894371890853,
+    "instrument": 0,
+    "coid": 1793149200007891844,
+    "side": "buy",
+    "delta": "0.0002",
+    "net": "-0.0028"
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "instrument": 0,
+    "coid": 1793149200007891847,
+    "side": "sell",
+    "delta": "0.0001",
+    "net": "-0.0029"
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "instrument": 0,
+    "coid": 1793149200007891847,
+    "side": "sell",
+    "delta": "0.0001",
+    "net": "-0.003"
+   }
+  ],
+  "end_position": {
+   "0": "-0.003"
+  },
+  "last_position_snapshot": {
+   "0": "-0.003"
+  },
+  "max_abs_inventory": {
+   "0": "0.003"
+  }
+ },
+ "pnl": {
+  "symbols": {
+   "BTCUSDT": {
+    "realised": "0.00818",
+    "open_qty": "-0.003",
+    "open_avg_cost": "80991.64",
+    "mark": "80914.15",
+    "mark_source": "basis sample 2026-10-28T03:00:00.007Z, Bitget mid",
+    "unrealised": "0.23247",
+    "fees": "0.126157916",
+    "total": "0.114492084"
+   }
+  },
+  "fees": "0.126157916 (the `order_fee` records, the last push per order, signed as the venue sends them: 39 orders)",
+  "fees_source": "order_fee_records",
+  "fee_magnitudes": false,
+  "fees_by_coin": {
+   "BTCUSDT": {
+    "USDT": "0.126157916"
+   }
+  },
+  "method": "Method: realised PnL matches each fill against the oldest open fills of the other side (FIFO per symbol, in journal time order) at the fills' price and quantity, in the quote currency; unrealised PnL values the open lots at the mark; total = realised + unrealised - fees (fees signed as the venue sends them, a positive fee a cost: docs/venues/bitget-uta.md, summed over their coins without conversion). Fills before the window are not priced: the FIFO starts flat."
+ },
+ "quoting": {
+  "order_registered": {
+   "buy": 478,
+   "sell": 559
+  },
+  "cancel_sent": 0,
+  "frame_sent": 0,
+  "order_state_applied": {},
+  "order_state_cancel_reason": {},
+  "venue_reject": {},
+  "suppression": 0,
+  "feed_health": 0,
+  "halt_event": 0,
+  "suppression_first": [],
+  "feed_health_first": []
+ },
+ "latency": null,
+ "venue": null,
+ "basis": {
+  "samples": 7200,
+  "malformed_rows": 0,
+  "stats": {
+   "min": "-3.3954",
+   "p10": "-0.3599",
+   "p25": "-0.1235",
+   "p50": "0.1240",
+   "p75": "0.3952",
+   "p90": "0.6172",
+   "max": "2.7324",
+   "mean": "0.1311",
+   "sd": "0.3995"
+  },
+  "share_above_hi": {
+   "bps": "11",
+   "share": "0.00%"
+  },
+  "share_below_lo": {
+   "bps": "1",
+   "share": "98.78%"
+  },
+  "per_10_min": [
+   {
+    "from": "2026-10-28T01:00:00Z",
+    "samples": 599,
+    "p50": "0.0744"
+   },
+   {
+    "from": "2026-10-28T01:10:00Z",
+    "samples": 600,
+    "p50": "0.0000"
+   },
+   {
+    "from": "2026-10-28T01:20:00Z",
+    "samples": 600,
+    "p50": "0.0000"
+   },
+   {
+    "from": "2026-10-28T01:30:00Z",
+    "samples": 600,
+    "p50": "0.1731"
+   },
+   {
+    "from": "2026-10-28T01:40:00Z",
+    "samples": 600,
+    "p50": "0.0989"
+   },
+   {
+    "from": "2026-10-28T01:50:00Z",
+    "samples": 600,
+    "p50": "0.0247"
+   },
+   {
+    "from": "2026-10-28T02:00:00Z",
+    "samples": 600,
+    "p50": "-0.0865"
+   },
+   {
+    "from": "2026-10-28T02:10:00Z",
+    "samples": 600,
+    "p50": "-0.1852"
+   },
+   {
+    "from": "2026-10-28T02:20:00Z",
+    "samples": 600,
+    "p50": "0.3766"
+   },
+   {
+    "from": "2026-10-28T02:30:00Z",
+    "samples": 600,
+    "p50": "0.3832"
+   },
+   {
+    "from": "2026-10-28T02:40:00Z",
+    "samples": 600,
+    "p50": "0.2720"
+   },
+   {
+    "from": "2026-10-28T02:50:00Z",
+    "samples": 600,
+    "p50": "0.2595"
+   },
+   {
+    "from": "2026-10-28T03:00:00Z",
+    "samples": 1,
+    "p50": "-0.3707"
+   }
+  ],
+  "at_fills": [
+   {
+    "ts_ns": 1793149402423890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80605.4",
+    "sample_ns": 1793149402007890853,
+    "bps": "-0.6078"
+   },
+   {
+    "ts_ns": 1793149402437890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80588.8",
+    "sample_ns": 1793149402007890853,
+    "bps": "-0.6078"
+   },
+   {
+    "ts_ns": 1793149402454890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80579.6",
+    "sample_ns": 1793149402007890853,
+    "bps": "-0.6078"
+   },
+   {
+    "ts_ns": 1793149564448890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80618.2",
+    "sample_ns": 1793149564007890853,
+    "bps": "0.2232"
+   },
+   {
+    "ts_ns": 1793149656908890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80636.2",
+    "sample_ns": 1793149657007890853,
+    "bps": "-2.5047"
+   },
+   {
+    "ts_ns": 1793149805437890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80595.6",
+    "sample_ns": 1793149805007890853,
+    "bps": "0.4218"
+   },
+   {
+    "ts_ns": 1793150119260890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80646.2",
+    "sample_ns": 1793150119007890853,
+    "bps": "-0.0372"
+   },
+   {
+    "ts_ns": 1793150131197890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80683.4",
+    "sample_ns": 1793150131007890853,
+    "bps": "0.3099"
+   },
+   {
+    "ts_ns": 1793150384507890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80670.9",
+    "sample_ns": 1793150384007890853,
+    "bps": "-0.0248"
+   },
+   {
+    "ts_ns": 1793150405599890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80690.4",
+    "sample_ns": 1793150406007890853,
+    "bps": "0.1363"
+   },
+   {
+    "ts_ns": 1793150553988890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80777.6",
+    "sample_ns": 1793150554007890853,
+    "bps": "-0.9657"
+   },
+   {
+    "ts_ns": 1793151499165890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80904.6",
+    "sample_ns": 1793151499007890853,
+    "bps": "-0.0371"
+   },
+   {
+    "ts_ns": 1793151499245890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80915.3",
+    "sample_ns": 1793151499007890853,
+    "bps": "-0.0371"
+   },
+   {
+    "ts_ns": 1793151569098890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80885.9",
+    "sample_ns": 1793151569007890853,
+    "bps": "0.1236"
+   },
+   {
+    "ts_ns": 1793151860871890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80889.5",
+    "sample_ns": 1793151861007890853,
+    "bps": "-0.9766"
+   },
+   {
+    "ts_ns": 1793151872174890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80918.4",
+    "sample_ns": 1793151872007890853,
+    "bps": "0.4202"
+   },
+   {
+    "ts_ns": 1793151921425890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80903.1",
+    "sample_ns": 1793151921007890853,
+    "bps": "0.1112"
+   },
+   {
+    "ts_ns": 1793152057875890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80879.7",
+    "sample_ns": 1793152058007890853,
+    "bps": "2.7324"
+   },
+   {
+    "ts_ns": 1793152541193890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80898.1",
+    "sample_ns": 1793152541007890853,
+    "bps": "0.2473"
+   },
+   {
+    "ts_ns": 1793153389882890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80926.5",
+    "sample_ns": 1793153390007890853,
+    "bps": "-1.0010"
+   },
+   {
+    "ts_ns": 1793153564962890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80974.7",
+    "sample_ns": 1793153565007890853,
+    "bps": "-0.2717"
+   },
+   {
+    "ts_ns": 1793153764529890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80999.6",
+    "sample_ns": 1793153765007890853,
+    "bps": "-0.2716"
+   },
+   {
+    "ts_ns": 1793153902038890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81101.4",
+    "sample_ns": 1793153902007890853,
+    "bps": "-0.5919"
+   },
+   {
+    "ts_ns": 1793153902068890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81108.6",
+    "sample_ns": 1793153902007890853,
+    "bps": "-0.5919"
+   },
+   {
+    "ts_ns": 1793153902103890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81112.4",
+    "sample_ns": 1793153902007890853,
+    "bps": "-0.5919"
+   },
+   {
+    "ts_ns": 1793153902206890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81114.5",
+    "sample_ns": 1793153902007890853,
+    "bps": "-0.5919"
+   },
+   {
+    "ts_ns": 1793154130474890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80973.2",
+    "sample_ns": 1793154130007890853,
+    "bps": "0.3706"
+   },
+   {
+    "ts_ns": 1793154154447890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81008.4",
+    "sample_ns": 1793154154007890853,
+    "bps": "0.5309"
+   },
+   {
+    "ts_ns": 1793154633634890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80916.5",
+    "sample_ns": 1793154634007890853,
+    "bps": "0.0680"
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "side": "sell",
+    "qty": "0.0001",
+    "price": "80923.3",
+    "sample_ns": 1793154634007890853,
+    "bps": "0.0680"
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "side": "sell",
+    "qty": "0.0001",
+    "price": "80923.3",
+    "sample_ns": 1793154634007890853,
+    "bps": "0.0680"
+   },
+   {
+    "ts_ns": 1793154859905890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80902.9",
+    "sample_ns": 1793154860007890853,
+    "bps": "0.0247"
+   },
+   {
+    "ts_ns": 1793155005985890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80898.2",
+    "sample_ns": 1793155006007890853,
+    "bps": "-0.8159"
+   },
+   {
+    "ts_ns": 1793155382193890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80866.7",
+    "sample_ns": 1793155382007890853,
+    "bps": "0.6184"
+   },
+   {
+    "ts_ns": 1793155503170890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80896.2",
+    "sample_ns": 1793155503007890853,
+    "bps": "0.0000"
+   },
+   {
+    "ts_ns": 1793155745193890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "80910.6",
+    "sample_ns": 1793155745007890853,
+    "bps": "0.3090"
+   },
+   {
+    "ts_ns": 1793155863431890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81008.4",
+    "sample_ns": 1793155863007890853,
+    "bps": "0.1605"
+   },
+   {
+    "ts_ns": 1793155863453890853,
+    "side": "sell",
+    "qty": "0.0002",
+    "price": "81018.6",
+    "sample_ns": 1793155863007890853,
+    "bps": "0.1605"
+   },
+   {
+    "ts_ns": 1793155894371890853,
+    "side": "buy",
+    "qty": "0.0002",
+    "price": "80989.4",
+    "sample_ns": 1793155894007890853,
+    "bps": "0.1852"
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "side": "sell",
+    "qty": "0.0001",
+    "price": "81010.9",
+    "sample_ns": 1793155904007890853,
+    "bps": "-1.2468"
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "side": "sell",
+    "qty": "0.0001",
+    "price": "81010.9",
+    "sample_ns": 1793155904007890853,
+    "bps": "-1.2468"
+   }
+  ]
+ },
+ "markout": {
+  "horizons_s": [
+   0,
+   2,
+   10,
+   60,
+   300,
+   900
+  ],
+  "tolerance_s": "1.5",
+  "fills": [
+   {
+    "ts_ns": 1793149402423890853,
+    "exec_id": "1",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80605.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149402007890853,
+      "bitget_bps": "1.855",
+      "bitget_quote": "0.002990",
+      "binance_bps": "2.463",
+      "binance_quote": "0.003970"
+     },
+     "2": {
+      "sample_ns": 1793149405007890853,
+      "bitget_bps": "-2.190",
+      "bitget_quote": "-0.003530",
+      "binance_bps": "-2.351",
+      "binance_quote": "-0.003790"
+     },
+     "10": {
+      "sample_ns": 1793149413007890853,
+      "bitget_bps": "-1.718",
+      "bitget_quote": "-0.002770",
+      "binance_bps": "-1.743",
+      "binance_quote": "-0.002810"
+     },
+     "60": {
+      "sample_ns": 1793149463007890853,
+      "bitget_bps": "0.564",
+      "bitget_quote": "0.000910",
+      "binance_bps": "0.564",
+      "binance_quote": "0.000910"
+     },
+     "300": {
+      "sample_ns": 1793149703007890853,
+      "bitget_bps": "2.301",
+      "bitget_quote": "0.003710",
+      "binance_bps": "2.314",
+      "binance_quote": "0.003730"
+     },
+     "900": {
+      "sample_ns": 1793150303007890853,
+      "bitget_bps": "7.574",
+      "bitget_quote": "0.012210",
+      "binance_bps": "7.115",
+      "binance_quote": "0.011470"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793149402437890853,
+    "exec_id": "2",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80588.8",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149402007890853,
+      "bitget_bps": "3.915",
+      "bitget_quote": "0.006310",
+      "binance_bps": "4.523",
+      "binance_quote": "0.007290"
+     },
+     "2": {
+      "sample_ns": 1793149405007890853,
+      "bitget_bps": "-0.130",
+      "bitget_quote": "-0.000210",
+      "binance_bps": "-0.292",
+      "binance_quote": "-0.000470"
+     },
+     "10": {
+      "sample_ns": 1793149413007890853,
+      "bitget_bps": "0.341",
+      "bitget_quote": "0.000550",
+      "binance_bps": "0.316",
+      "binance_quote": "0.000510"
+     },
+     "60": {
+      "sample_ns": 1793149463007890853,
+      "bitget_bps": "2.624",
+      "bitget_quote": "0.004230",
+      "binance_bps": "2.624",
+      "binance_quote": "0.004230"
+     },
+     "300": {
+      "sample_ns": 1793149703007890853,
+      "bitget_bps": "4.362",
+      "bitget_quote": "0.007030",
+      "binance_bps": "4.374",
+      "binance_quote": "0.007050"
+     },
+     "900": {
+      "sample_ns": 1793150303007890853,
+      "bitget_bps": "9.635",
+      "bitget_quote": "0.015530",
+      "binance_bps": "9.176",
+      "binance_quote": "0.014790"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793149402454890853,
+    "exec_id": "3",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80579.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149402007890853,
+      "bitget_bps": "5.057",
+      "bitget_quote": "0.008150",
+      "binance_bps": "5.665",
+      "binance_quote": "0.009130"
+     },
+     "2": {
+      "sample_ns": 1793149405007890853,
+      "bitget_bps": "1.011",
+      "bitget_quote": "0.001630",
+      "binance_bps": "0.850",
+      "binance_quote": "0.001370"
+     },
+     "10": {
+      "sample_ns": 1793149413007890853,
+      "bitget_bps": "1.483",
+      "bitget_quote": "0.002390",
+      "binance_bps": "1.458",
+      "binance_quote": "0.002350"
+     },
+     "60": {
+      "sample_ns": 1793149463007890853,
+      "bitget_bps": "3.766",
+      "bitget_quote": "0.006070",
+      "binance_bps": "3.766",
+      "binance_quote": "0.006070"
+     },
+     "300": {
+      "sample_ns": 1793149703007890853,
+      "bitget_bps": "5.504",
+      "bitget_quote": "0.008870",
+      "binance_bps": "5.516",
+      "binance_quote": "0.008890"
+     },
+     "900": {
+      "sample_ns": 1793150303007890853,
+      "bitget_bps": "10.778",
+      "bitget_quote": "0.017370",
+      "binance_bps": "10.319",
+      "binance_quote": "0.016630"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793149564448890853,
+    "exec_id": "4",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80618.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149564007890853,
+      "bitget_bps": "2.884",
+      "bitget_quote": "0.004650",
+      "binance_bps": "2.661",
+      "binance_quote": "0.004290"
+     },
+     "2": {
+      "sample_ns": 1793149567007890853,
+      "bitget_bps": "-0.651",
+      "bitget_quote": "-0.001050",
+      "binance_bps": "-0.788",
+      "binance_quote": "-0.001270"
+     },
+     "10": {
+      "sample_ns": 1793149575007890853,
+      "bitget_bps": "-1.061",
+      "bitget_quote": "-0.001710",
+      "binance_bps": "-0.788",
+      "binance_quote": "-0.001270"
+     },
+     "60": {
+      "sample_ns": 1793149625007890853,
+      "bitget_bps": "-0.577",
+      "bitget_quote": "-0.000930",
+      "binance_bps": "-0.316",
+      "binance_quote": "-0.000510"
+     },
+     "300": {
+      "sample_ns": 1793149865007890853,
+      "bitget_bps": "-3.070",
+      "bitget_quote": "-0.004950",
+      "binance_bps": "-2.822",
+      "binance_quote": "-0.004550"
+     },
+     "900": {
+      "sample_ns": 1793150465007890853,
+      "bitget_bps": "13.899",
+      "bitget_quote": "0.022410",
+      "binance_bps": "13.750",
+      "binance_quote": "0.022170"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793149656908890853,
+    "exec_id": "5",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80636.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149657007890853,
+      "bitget_bps": "0.849",
+      "bitget_quote": "0.001370",
+      "binance_bps": "-1.656",
+      "binance_quote": "-0.002670"
+     },
+     "2": {
+      "sample_ns": 1793149659007890853,
+      "bitget_bps": "-1.519",
+      "bitget_quote": "-0.002450",
+      "binance_bps": "-1.966",
+      "binance_quote": "-0.003170"
+     },
+     "10": {
+      "sample_ns": 1793149667007890853,
+      "bitget_bps": "-2.809",
+      "bitget_quote": "-0.004530",
+      "binance_bps": "-2.263",
+      "binance_quote": "-0.003650"
+     },
+     "60": {
+      "sample_ns": 1793149717007890853,
+      "bitget_bps": "0.552",
+      "bitget_quote": "0.000890",
+      "binance_bps": "0.651",
+      "binance_quote": "0.001050"
+     },
+     "300": {
+      "sample_ns": 1793149957007890853,
+      "bitget_bps": "6.368",
+      "bitget_quote": "0.010270",
+      "binance_bps": "6.008",
+      "binance_quote": "0.009690"
+     },
+     "900": {
+      "sample_ns": 1793150557007890853,
+      "bitget_bps": "-17.678",
+      "bitget_quote": "-0.028510",
+      "binance_bps": "-17.343",
+      "binance_quote": "-0.027970"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793149805437890853,
+    "exec_id": "6",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80595.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793149805007890853,
+      "bitget_bps": "1.594",
+      "bitget_quote": "0.002570",
+      "binance_bps": "1.173",
+      "binance_quote": "0.001890"
+     },
+     "2": {
+      "sample_ns": 1793149808007890853,
+      "bitget_bps": "-0.503",
+      "bitget_quote": "-0.000810",
+      "binance_bps": "-0.329",
+      "binance_quote": "-0.000530"
+     },
+     "10": {
+      "sample_ns": 1793149816007890853,
+      "bitget_bps": "1.309",
+      "bitget_quote": "0.002110",
+      "binance_bps": "0.788",
+      "binance_quote": "0.001270"
+     },
+     "60": {
+      "sample_ns": 1793149866007890853,
+      "bitget_bps": "-0.267",
+      "bitget_quote": "-0.000430",
+      "binance_bps": "-0.019",
+      "binance_quote": "-0.000030"
+     },
+     "300": {
+      "sample_ns": 1793150106007890853,
+      "bitget_bps": "4.858",
+      "bitget_quote": "0.007830",
+      "binance_bps": "4.622",
+      "binance_quote": "0.007450"
+     },
+     "900": {
+      "sample_ns": 1793150706007890853,
+      "bitget_bps": "30.070",
+      "bitget_quote": "0.048470",
+      "binance_bps": "30.293",
+      "binance_quote": "0.048830"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793150119260890853,
+    "exec_id": "7",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80646.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793150119007890853,
+      "bitget_bps": "1.519",
+      "bitget_quote": "0.002450",
+      "binance_bps": "1.482",
+      "binance_quote": "0.002390"
+     },
+     "2": {
+      "sample_ns": 1793150122007890853,
+      "bitget_bps": "-0.229",
+      "bitget_quote": "-0.000370",
+      "binance_bps": "0.130",
+      "binance_quote": "0.000210"
+     },
+     "10": {
+      "sample_ns": 1793150130007890853,
+      "bitget_bps": "-3.714",
+      "bitget_quote": "-0.005990",
+      "binance_bps": "-3.404",
+      "binance_quote": "-0.005490"
+     },
+     "60": {
+      "sample_ns": 1793150180007890853,
+      "bitget_bps": "-0.229",
+      "bitget_quote": "-0.000370",
+      "binance_bps": "-0.329",
+      "binance_quote": "-0.000530"
+     },
+     "300": {
+      "sample_ns": 1793150420007890853,
+      "bitget_bps": "-7.347",
+      "bitget_quote": "-0.011850",
+      "binance_bps": "-6.665",
+      "binance_quote": "-0.010750"
+     },
+     "900": {
+      "sample_ns": 1793151020007890853,
+      "bitget_bps": "-17.465",
+      "bitget_quote": "-0.028170",
+      "binance_bps": "-17.639",
+      "binance_quote": "-0.028450"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793150131197890853,
+    "exec_id": "8",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80683.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793150131007890853,
+      "bitget_bps": "0.899",
+      "bitget_quote": "0.001450",
+      "binance_bps": "1.208",
+      "binance_quote": "0.001950"
+     },
+     "2": {
+      "sample_ns": 1793150134007890853,
+      "bitget_bps": "-0.254",
+      "bitget_quote": "-0.000410",
+      "binance_bps": "-0.316",
+      "binance_quote": "-0.000510"
+     },
+     "10": {
+      "sample_ns": 1793150142007890853,
+      "bitget_bps": "-1.246",
+      "bitget_quote": "-0.002010",
+      "binance_bps": "-0.713",
+      "binance_quote": "-0.001150"
+     },
+     "60": {
+      "sample_ns": 1793150192007890853,
+      "bitget_bps": "6.017",
+      "bitget_quote": "0.009710",
+      "binance_bps": "5.893",
+      "binance_quote": "0.009510"
+     },
+     "300": {
+      "sample_ns": 1793150432007890853,
+      "bitget_bps": "-5.745",
+      "bitget_quote": "-0.009270",
+      "binance_bps": "-5.534",
+      "binance_quote": "-0.008930"
+     },
+     "900": {
+      "sample_ns": 1793151032007890853,
+      "bitget_bps": "-8.918",
+      "bitget_quote": "-0.014390",
+      "binance_bps": "-8.248",
+      "binance_quote": "-0.013310"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793150384507890853,
+    "exec_id": "9",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80670.9",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793150384007890853,
+      "bitget_bps": "2.200",
+      "bitget_quote": "0.003550",
+      "binance_bps": "2.176",
+      "binance_quote": "0.003510"
+     },
+     "2": {
+      "sample_ns": 1793150387007890853,
+      "bitget_bps": "-0.353",
+      "bitget_quote": "-0.000570",
+      "binance_bps": "-0.130",
+      "binance_quote": "-0.000210"
+     },
+     "10": {
+      "sample_ns": 1793150395007890853,
+      "bitget_bps": "-0.353",
+      "bitget_quote": "-0.000570",
+      "binance_bps": "-0.130",
+      "binance_quote": "-0.000210"
+     },
+     "60": {
+      "sample_ns": 1793150445007890853,
+      "bitget_bps": "-4.283",
+      "bitget_quote": "-0.006910",
+      "binance_bps": "-4.717",
+      "binance_quote": "-0.007610"
+     },
+     "300": {
+      "sample_ns": 1793150685007890853,
+      "bitget_bps": "-21.451",
+      "bitget_quote": "-0.034610",
+      "binance_bps": "-21.402",
+      "binance_quote": "-0.034530"
+     },
+     "900": {
+      "sample_ns": 1793151285007890853,
+      "bitget_bps": "-15.067",
+      "bitget_quote": "-0.024310",
+      "binance_bps": "-14.795",
+      "binance_quote": "-0.023870"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793150405599890853,
+    "exec_id": "10",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80690.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793150406007890853,
+      "bitget_bps": "-0.031",
+      "bitget_quote": "-0.000050",
+      "binance_bps": "0.105",
+      "binance_quote": "0.000170"
+     },
+     "2": {
+      "sample_ns": 1793150408007890853,
+      "bitget_bps": "-0.031",
+      "bitget_quote": "-0.000050",
+      "binance_bps": "0.056",
+      "binance_quote": "0.000090"
+     },
+     "10": {
+      "sample_ns": 1793150416007890853,
+      "bitget_bps": "-1.357",
+      "bitget_quote": "-0.002190",
+      "binance_bps": "-0.911",
+      "binance_quote": "-0.001470"
+     },
+     "60": {
+      "sample_ns": 1793150466007890853,
+      "bitget_bps": "-4.939",
+      "bitget_quote": "-0.007970",
+      "binance_bps": "-5.112",
+      "binance_quote": "-0.008250"
+     },
+     "300": {
+      "sample_ns": 1793150706007890853,
+      "bitget_bps": "-18.286",
+      "bitget_quote": "-0.029510",
+      "binance_bps": "-18.509",
+      "binance_quote": "-0.029870"
+     },
+     "900": {
+      "sample_ns": 1793151306007890853,
+      "bitget_bps": "-10.218",
+      "bitget_quote": "-0.016490",
+      "binance_bps": "-9.859",
+      "binance_quote": "-0.015910"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793150553988890853,
+    "exec_id": "11",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80777.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793150554007890853,
+      "bitget_bps": "2.185",
+      "bitget_quote": "0.003530",
+      "binance_bps": "1.219",
+      "binance_quote": "0.001970"
+     },
+     "2": {
+      "sample_ns": 1793150556007890853,
+      "bitget_bps": "-0.142",
+      "bitget_quote": "-0.000230",
+      "binance_bps": "0.192",
+      "binance_quote": "0.000310"
+     },
+     "10": {
+      "sample_ns": 1793150564007890853,
+      "bitget_bps": "-1.975",
+      "bitget_quote": "-0.003190",
+      "binance_bps": "-1.356",
+      "binance_quote": "-0.002190"
+     },
+     "60": {
+      "sample_ns": 1793150614007890853,
+      "bitget_bps": "0.539",
+      "bitget_quote": "0.000870",
+      "binance_bps": "0.316",
+      "binance_quote": "0.000510"
+     },
+     "300": {
+      "sample_ns": 1793150854007890853,
+      "bitget_bps": "0.006",
+      "bitget_quote": "0.000010",
+      "binance_bps": "0.068",
+      "binance_quote": "0.000110"
+     },
+     "900": {
+      "sample_ns": 1793151454007890853,
+      "bitget_bps": "-13.228",
+      "bitget_quote": "-0.021370",
+      "binance_bps": "-12.918",
+      "binance_quote": "-0.020870"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151499165890853,
+    "exec_id": "12",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80904.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151499007890853,
+      "bitget_bps": "1.564",
+      "bitget_quote": "0.002530",
+      "binance_bps": "1.526",
+      "binance_quote": "0.002470"
+     },
+     "2": {
+      "sample_ns": 1793151502007890853,
+      "bitget_bps": "-1.069",
+      "bitget_quote": "-0.001730",
+      "binance_bps": "0.179",
+      "binance_quote": "0.000290"
+     },
+     "10": {
+      "sample_ns": 1793151510007890853,
+      "bitget_bps": "0.031",
+      "bitget_quote": "0.000050",
+      "binance_bps": "0.587",
+      "binance_quote": "0.000950"
+     },
+     "60": {
+      "sample_ns": 1793151560007890853,
+      "bitget_bps": "0.439",
+      "bitget_quote": "0.000710",
+      "binance_bps": "0.253",
+      "binance_quote": "0.000410"
+     },
+     "300": {
+      "sample_ns": 1793151800007890853,
+      "bitget_bps": "2.404",
+      "bitget_quote": "0.003890",
+      "binance_bps": "2.046",
+      "binance_quote": "0.003310"
+     },
+     "900": {
+      "sample_ns": 1793152400007890853,
+      "bitget_bps": "2.416",
+      "bitget_quote": "0.003910",
+      "binance_bps": "2.552",
+      "binance_quote": "0.004130"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151499245890853,
+    "exec_id": "13",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80915.3",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151499007890853,
+      "bitget_bps": "2.886",
+      "bitget_quote": "0.004670",
+      "binance_bps": "2.849",
+      "binance_quote": "0.004610"
+     },
+     "2": {
+      "sample_ns": 1793151502007890853,
+      "bitget_bps": "0.253",
+      "bitget_quote": "0.000410",
+      "binance_bps": "1.502",
+      "binance_quote": "0.002430"
+     },
+     "10": {
+      "sample_ns": 1793151510007890853,
+      "bitget_bps": "1.353",
+      "bitget_quote": "0.002190",
+      "binance_bps": "1.909",
+      "binance_quote": "0.003090"
+     },
+     "60": {
+      "sample_ns": 1793151560007890853,
+      "bitget_bps": "1.761",
+      "bitget_quote": "0.002850",
+      "binance_bps": "1.576",
+      "binance_quote": "0.002550"
+     },
+     "300": {
+      "sample_ns": 1793151800007890853,
+      "bitget_bps": "3.726",
+      "bitget_quote": "0.006030",
+      "binance_bps": "3.368",
+      "binance_quote": "0.005450"
+     },
+     "900": {
+      "sample_ns": 1793152400007890853,
+      "bitget_bps": "3.738",
+      "bitget_quote": "0.006050",
+      "binance_bps": "3.874",
+      "binance_quote": "0.006270"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151569098890853,
+    "exec_id": "14",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80885.9",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151569007890853,
+      "bitget_bps": "1.873",
+      "bitget_quote": "0.003030",
+      "binance_bps": "1.749",
+      "binance_quote": "0.002830"
+     },
+     "2": {
+      "sample_ns": 1793151572007890853,
+      "bitget_bps": "1.280",
+      "bitget_quote": "0.002070",
+      "binance_bps": "1.329",
+      "binance_quote": "0.002150"
+     },
+     "10": {
+      "sample_ns": 1793151580007890853,
+      "bitget_bps": "1.280",
+      "bitget_quote": "0.002070",
+      "binance_bps": "1.329",
+      "binance_quote": "0.002150"
+     },
+     "60": {
+      "sample_ns": 1793151630007890853,
+      "bitget_bps": "1.811",
+      "bitget_quote": "0.002930",
+      "binance_bps": "1.613",
+      "binance_quote": "0.002610"
+     },
+     "300": {
+      "sample_ns": 1793151870007890853,
+      "bitget_bps": "3.208",
+      "bitget_quote": "0.005190",
+      "binance_bps": "2.491",
+      "binance_quote": "0.004030"
+     },
+     "900": {
+      "sample_ns": 1793152470007890853,
+      "bitget_bps": "-4.247",
+      "bitget_quote": "-0.006870",
+      "binance_bps": "-4.123",
+      "binance_quote": "-0.006670"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151860871890853,
+    "exec_id": "15",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80889.5",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151861007890853,
+      "bitget_bps": "0.377",
+      "bitget_quote": "0.000610",
+      "binance_bps": "-0.600",
+      "binance_quote": "-0.000970"
+     },
+     "2": {
+      "sample_ns": 1793151863007890853,
+      "bitget_bps": "-2.763",
+      "bitget_quote": "-0.004470",
+      "binance_bps": "-2.046",
+      "binance_quote": "-0.003310"
+     },
+     "10": {
+      "sample_ns": 1793151871007890853,
+      "bitget_bps": "-2.763",
+      "bitget_quote": "-0.004470",
+      "binance_bps": "-2.046",
+      "binance_quote": "-0.003310"
+     },
+     "60": {
+      "sample_ns": 1793151921007890853,
+      "bitget_bps": "-3.159",
+      "bitget_quote": "-0.005110",
+      "binance_bps": "-3.047",
+      "binance_quote": "-0.004930"
+     },
+     "300": {
+      "sample_ns": 1793152161007890853,
+      "bitget_bps": "1.230",
+      "bitget_quote": "0.001990",
+      "binance_bps": "1.391",
+      "binance_quote": "0.002250"
+     },
+     "900": {
+      "sample_ns": 1793152761007890853,
+      "bitget_bps": "-3.665",
+      "bitget_quote": "-0.005930",
+      "binance_bps": "-3.517",
+      "binance_quote": "-0.005690"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151872174890853,
+    "exec_id": "16",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80918.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151872007890853,
+      "bitget_bps": "0.809",
+      "bitget_quote": "0.001310",
+      "binance_bps": "1.230",
+      "binance_quote": "0.001990"
+     },
+     "2": {
+      "sample_ns": 1793151875007890853,
+      "bitget_bps": "-2.478",
+      "bitget_quote": "-0.004010",
+      "binance_bps": "-2.206",
+      "binance_quote": "-0.003570"
+     },
+     "10": {
+      "sample_ns": 1793151883007890853,
+      "bitget_bps": "-1.996",
+      "bitget_quote": "-0.003230",
+      "binance_bps": "-2.206",
+      "binance_quote": "-0.003570"
+     },
+     "60": {
+      "sample_ns": 1793151933007890853,
+      "bitget_bps": "2.082",
+      "bitget_quote": "0.003370",
+      "binance_bps": "2.045",
+      "binance_quote": "0.003310"
+     },
+     "300": {
+      "sample_ns": 1793152173007890853,
+      "bitget_bps": "4.356",
+      "bitget_quote": "0.007050",
+      "binance_bps": "4.962",
+      "binance_quote": "0.008030"
+     },
+     "900": {
+      "sample_ns": 1793152773007890853,
+      "bitget_bps": "0.958",
+      "bitget_quote": "0.001550",
+      "binance_bps": "0.723",
+      "binance_quote": "0.001170"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793151921425890853,
+    "exec_id": "17",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80903.1",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793151921007890853,
+      "bitget_bps": "1.477",
+      "bitget_quote": "0.002390",
+      "binance_bps": "1.366",
+      "binance_quote": "0.002210"
+     },
+     "2": {
+      "sample_ns": 1793151924007890853,
+      "bitget_bps": "0.822",
+      "bitget_quote": "0.001330",
+      "binance_bps": "0.105",
+      "binance_quote": "0.000170"
+     },
+     "10": {
+      "sample_ns": 1793151932007890853,
+      "bitget_bps": "-0.192",
+      "bitget_quote": "-0.000310",
+      "binance_bps": "-0.402",
+      "binance_quote": "-0.000650"
+     },
+     "60": {
+      "sample_ns": 1793151982007890853,
+      "bitget_bps": "-1.947",
+      "bitget_quote": "-0.003150",
+      "binance_bps": "-1.662",
+      "binance_quote": "-0.002690"
+     },
+     "300": {
+      "sample_ns": 1793152222007890853,
+      "bitget_bps": "-3.912",
+      "bitget_quote": "-0.006330",
+      "binance_bps": "-3.368",
+      "binance_quote": "-0.005450"
+     },
+     "900": {
+      "sample_ns": 1793152822007890853,
+      "bitget_bps": "0.624",
+      "bitget_quote": "0.001010",
+      "binance_bps": "0.637",
+      "binance_quote": "0.001030"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793152057875890853,
+    "exec_id": "18",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80879.7",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793152058007890853,
+      "bitget_bps": "2.776",
+      "bitget_quote": "0.004490",
+      "binance_bps": "0.043",
+      "binance_quote": "0.000070"
+     },
+     "2": {
+      "sample_ns": 1793152060007890853,
+      "bitget_bps": "-0.019",
+      "bitget_quote": "-0.000030",
+      "binance_bps": "0.043",
+      "binance_quote": "0.000070"
+     },
+     "10": {
+      "sample_ns": 1793152068007890853,
+      "bitget_bps": "0.352",
+      "bitget_quote": "0.000570",
+      "binance_bps": "0.253",
+      "binance_quote": "0.000410"
+     },
+     "60": {
+      "sample_ns": 1793152118007890853,
+      "bitget_bps": "0.031",
+      "bitget_quote": "0.000050",
+      "binance_bps": "-0.167",
+      "binance_quote": "-0.000270"
+     },
+     "300": {
+      "sample_ns": 1793152358007890853,
+      "bitget_bps": "-1.984",
+      "bitget_quote": "-0.003210",
+      "binance_bps": "-1.811",
+      "binance_quote": "-0.002930"
+     },
+     "900": {
+      "sample_ns": 1793152958007890853,
+      "bitget_bps": "-0.946",
+      "bitget_quote": "-0.001530",
+      "binance_bps": "-0.884",
+      "binance_quote": "-0.001430"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793152541193890853,
+    "exec_id": "19",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80898.1",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793152541007890853,
+      "bitget_bps": "1.502",
+      "bitget_quote": "0.002430",
+      "binance_bps": "1.749",
+      "binance_quote": "0.002830"
+     },
+     "2": {
+      "sample_ns": 1793152544007890853,
+      "bitget_bps": "-1.588",
+      "bitget_quote": "-0.002570",
+      "binance_bps": "-2.108",
+      "binance_quote": "-0.003410"
+     },
+     "10": {
+      "sample_ns": 1793152552007890853,
+      "bitget_bps": "-2.108",
+      "bitget_quote": "-0.003410",
+      "binance_bps": "-2.108",
+      "binance_quote": "-0.003410"
+     },
+     "60": {
+      "sample_ns": 1793152602007890853,
+      "bitget_bps": "-3.035",
+      "bitget_quote": "-0.004910",
+      "binance_bps": "-2.701",
+      "binance_quote": "-0.004370"
+     },
+     "300": {
+      "sample_ns": 1793152842007890853,
+      "bitget_bps": "-1.131",
+      "bitget_quote": "-0.001830",
+      "binance_bps": "-1.267",
+      "binance_quote": "-0.002050"
+     },
+     "900": {
+      "sample_ns": 1793153442007890853,
+      "bitget_bps": "-5.878",
+      "bitget_quote": "-0.009510",
+      "binance_bps": "-5.890",
+      "binance_quote": "-0.009530"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153389882890853,
+    "exec_id": "20",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80926.5",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153390007890853,
+      "bitget_bps": "1.724",
+      "bitget_quote": "0.002790",
+      "binance_bps": "0.723",
+      "binance_quote": "0.001170"
+     },
+     "2": {
+      "sample_ns": 1793153392007890853,
+      "bitget_bps": "1.662",
+      "bitget_quote": "0.002690",
+      "binance_bps": "1.081",
+      "binance_quote": "0.001750"
+     },
+     "10": {
+      "sample_ns": 1793153400007890853,
+      "bitget_bps": "1.662",
+      "bitget_quote": "0.002690",
+      "binance_bps": "1.081",
+      "binance_quote": "0.001750"
+     },
+     "60": {
+      "sample_ns": 1793153450007890853,
+      "bitget_bps": "-2.354",
+      "bitget_quote": "-0.003810",
+      "binance_bps": "-2.898",
+      "binance_quote": "-0.004690"
+     },
+     "300": {
+      "sample_ns": 1793153690007890853,
+      "bitget_bps": "-10.695",
+      "bitget_quote": "-0.017310",
+      "binance_bps": "-11.053",
+      "binance_quote": "-0.017890"
+     },
+     "900": {
+      "sample_ns": 1793154290007890853,
+      "bitget_bps": "0.550",
+      "bitget_quote": "0.000890",
+      "binance_bps": "1.069",
+      "binance_quote": "0.001730"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153564962890853,
+    "exec_id": "21",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80974.7",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153565007890853,
+      "bitget_bps": "0.525",
+      "bitget_quote": "0.000850",
+      "binance_bps": "0.797",
+      "binance_quote": "0.001290"
+     },
+     "2": {
+      "sample_ns": 1793153567007890853,
+      "bitget_bps": "-0.056",
+      "bitget_quote": "-0.000090",
+      "binance_bps": "0.797",
+      "binance_quote": "0.001290"
+     },
+     "10": {
+      "sample_ns": 1793153575007890853,
+      "bitget_bps": "-0.895",
+      "bitget_quote": "-0.001450",
+      "binance_bps": "-1.179",
+      "binance_quote": "-0.001910"
+     },
+     "60": {
+      "sample_ns": 1793153625007890853,
+      "bitget_bps": "1.340",
+      "bitget_quote": "0.002170",
+      "binance_bps": "1.365",
+      "binance_quote": "0.002210"
+     },
+     "300": {
+      "sample_ns": 1793153865007890853,
+      "bitget_bps": "14.109",
+      "bitget_quote": "0.022850",
+      "binance_bps": "13.628",
+      "binance_quote": "0.022070"
+     },
+     "900": {
+      "sample_ns": 1793154465007890853,
+      "bitget_bps": "-3.538",
+      "bitget_quote": "-0.005730",
+      "binance_bps": "-4.044",
+      "binance_quote": "-0.006550"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153764529890853,
+    "exec_id": "22",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80999.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153765007890853,
+      "bitget_bps": "-0.216",
+      "bitget_quote": "-0.000350",
+      "binance_bps": "0.056",
+      "binance_quote": "0.000090"
+     },
+     "2": {
+      "sample_ns": 1793153767007890853,
+      "bitget_bps": "0.451",
+      "bitget_quote": "0.000730",
+      "binance_bps": "1.056",
+      "binance_quote": "0.001710"
+     },
+     "10": {
+      "sample_ns": 1793153775007890853,
+      "bitget_bps": "4.574",
+      "bitget_quote": "0.007410",
+      "binance_bps": "4.698",
+      "binance_quote": "0.007610"
+     },
+     "60": {
+      "sample_ns": 1793153825007890853,
+      "bitget_bps": "11.648",
+      "bitget_quote": "0.018870",
+      "binance_bps": "12.031",
+      "binance_quote": "0.019490"
+     },
+     "300": {
+      "sample_ns": 1793154065007890853,
+      "bitget_bps": "1.389",
+      "bitget_quote": "0.002250",
+      "binance_bps": "1.130",
+      "binance_quote": "0.001830"
+     },
+     "900": {
+      "sample_ns": 1793154665007890853,
+      "bitget_bps": "-7.611",
+      "bitget_quote": "-0.012330",
+      "binance_bps": "-8.352",
+      "binance_quote": "-0.013530"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153902038890853,
+    "exec_id": "23",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81101.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153902007890853,
+      "bitget_bps": "2.102",
+      "bitget_quote": "0.003410",
+      "binance_bps": "1.510",
+      "binance_quote": "0.002450"
+     },
+     "2": {
+      "sample_ns": 1793153905007890853,
+      "bitget_bps": "-1.190",
+      "bitget_quote": "-0.001930",
+      "binance_bps": "-0.980",
+      "binance_quote": "-0.001590"
+     },
+     "10": {
+      "sample_ns": 1793153913007890853,
+      "bitget_bps": "-2.189",
+      "bitget_quote": "-0.003550",
+      "binance_bps": "-1.350",
+      "binance_quote": "-0.002190"
+     },
+     "60": {
+      "sample_ns": 1793153963007890853,
+      "bitget_bps": "4.482",
+      "bitget_quote": "0.007270",
+      "binance_bps": "5.099",
+      "binance_quote": "0.008270"
+     },
+     "300": {
+      "sample_ns": 1793154203007890853,
+      "bitget_bps": "14.605",
+      "bitget_quote": "0.023690",
+      "binance_bps": "15.320",
+      "binance_quote": "0.024850"
+     },
+     "900": {
+      "sample_ns": 1793154803007890853,
+      "bitget_bps": "23.754",
+      "bitget_quote": "0.038530",
+      "binance_bps": "23.631",
+      "binance_quote": "0.038330"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153902068890853,
+    "exec_id": "24",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81108.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153902007890853,
+      "bitget_bps": "2.990",
+      "bitget_quote": "0.004850",
+      "binance_bps": "2.398",
+      "binance_quote": "0.003890"
+     },
+     "2": {
+      "sample_ns": 1793153905007890853,
+      "bitget_bps": "-0.302",
+      "bitget_quote": "-0.000490",
+      "binance_bps": "-0.092",
+      "binance_quote": "-0.000150"
+     },
+     "10": {
+      "sample_ns": 1793153913007890853,
+      "bitget_bps": "-1.301",
+      "bitget_quote": "-0.002110",
+      "binance_bps": "-0.462",
+      "binance_quote": "-0.000750"
+     },
+     "60": {
+      "sample_ns": 1793153963007890853,
+      "bitget_bps": "5.369",
+      "bitget_quote": "0.008710",
+      "binance_bps": "5.986",
+      "binance_quote": "0.009710"
+     },
+     "300": {
+      "sample_ns": 1793154203007890853,
+      "bitget_bps": "15.492",
+      "bitget_quote": "0.025130",
+      "binance_bps": "16.207",
+      "binance_quote": "0.026290"
+     },
+     "900": {
+      "sample_ns": 1793154803007890853,
+      "bitget_bps": "24.640",
+      "bitget_quote": "0.039970",
+      "binance_bps": "24.517",
+      "binance_quote": "0.039770"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153902103890853,
+    "exec_id": "25",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81112.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153902007890853,
+      "bitget_bps": "3.458",
+      "bitget_quote": "0.005610",
+      "binance_bps": "2.866",
+      "binance_quote": "0.004650"
+     },
+     "2": {
+      "sample_ns": 1793153905007890853,
+      "bitget_bps": "0.166",
+      "bitget_quote": "0.000270",
+      "binance_bps": "0.376",
+      "binance_quote": "0.000610"
+     },
+     "10": {
+      "sample_ns": 1793153913007890853,
+      "bitget_bps": "-0.832",
+      "bitget_quote": "-0.001350",
+      "binance_bps": "0.006",
+      "binance_quote": "0.000010"
+     },
+     "60": {
+      "sample_ns": 1793153963007890853,
+      "bitget_bps": "5.838",
+      "bitget_quote": "0.009470",
+      "binance_bps": "6.454",
+      "binance_quote": "0.010470"
+     },
+     "300": {
+      "sample_ns": 1793154203007890853,
+      "bitget_bps": "15.959",
+      "bitget_quote": "0.025890",
+      "binance_bps": "16.674",
+      "binance_quote": "0.027050"
+     },
+     "900": {
+      "sample_ns": 1793154803007890853,
+      "bitget_bps": "25.107",
+      "bitget_quote": "0.040730",
+      "binance_bps": "24.984",
+      "binance_quote": "0.040530"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793153902206890853,
+    "exec_id": "26",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81114.5",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793153902007890853,
+      "bitget_bps": "3.717",
+      "bitget_quote": "0.006030",
+      "binance_bps": "3.125",
+      "binance_quote": "0.005070"
+     },
+     "2": {
+      "sample_ns": 1793153905007890853,
+      "bitget_bps": "0.425",
+      "bitget_quote": "0.000690",
+      "binance_bps": "0.635",
+      "binance_quote": "0.001030"
+     },
+     "10": {
+      "sample_ns": 1793153913007890853,
+      "bitget_bps": "-0.573",
+      "bitget_quote": "-0.000930",
+      "binance_bps": "0.265",
+      "binance_quote": "0.000430"
+     },
+     "60": {
+      "sample_ns": 1793153963007890853,
+      "bitget_bps": "6.096",
+      "bitget_quote": "0.009890",
+      "binance_bps": "6.713",
+      "binance_quote": "0.010890"
+     },
+     "300": {
+      "sample_ns": 1793154203007890853,
+      "bitget_bps": "16.218",
+      "bitget_quote": "0.026310",
+      "binance_bps": "16.933",
+      "binance_quote": "0.027470"
+     },
+     "900": {
+      "sample_ns": 1793154803007890853,
+      "bitget_bps": "25.365",
+      "bitget_quote": "0.041150",
+      "binance_bps": "25.242",
+      "binance_quote": "0.040950"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154130474890853,
+    "exec_id": "27",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80973.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154130007890853,
+      "bitget_bps": "1.673",
+      "bitget_quote": "0.002710",
+      "binance_bps": "2.044",
+      "binance_quote": "0.003310"
+     },
+     "2": {
+      "sample_ns": 1793154133007890853,
+      "bitget_bps": "-1.735",
+      "bitget_quote": "-0.002810",
+      "binance_bps": "-1.204",
+      "binance_quote": "-0.001950"
+     },
+     "10": {
+      "sample_ns": 1793154141007890853,
+      "bitget_bps": "-1.192",
+      "bitget_quote": "-0.001930",
+      "binance_bps": "-1.204",
+      "binance_quote": "-0.001950"
+     },
+     "60": {
+      "sample_ns": 1793154191007890853,
+      "bitget_bps": "-3.304",
+      "bitget_quote": "-0.005350",
+      "binance_bps": "-3.304",
+      "binance_quote": "-0.005350"
+     },
+     "300": {
+      "sample_ns": 1793154431007890853,
+      "bitget_bps": "5.341",
+      "bitget_quote": "0.008650",
+      "binance_bps": "5.724",
+      "binance_quote": "0.009270"
+     },
+     "900": {
+      "sample_ns": 1793155031007890853,
+      "bitget_bps": "7.700",
+      "bitget_quote": "0.012470",
+      "binance_bps": "8.145",
+      "binance_quote": "0.013190"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154154447890853,
+    "exec_id": "28",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81008.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154154007890853,
+      "bitget_bps": "0.512",
+      "bitget_quote": "0.000830",
+      "binance_bps": "1.043",
+      "binance_quote": "0.001690"
+     },
+     "2": {
+      "sample_ns": 1793154157007890853,
+      "bitget_bps": "0.994",
+      "bitget_quote": "0.001610",
+      "binance_bps": "1.043",
+      "binance_quote": "0.001690"
+     },
+     "10": {
+      "sample_ns": 1793154165007890853,
+      "bitget_bps": "3.475",
+      "bitget_quote": "0.005630",
+      "binance_bps": "3.858",
+      "binance_quote": "0.006250"
+     },
+     "60": {
+      "sample_ns": 1793154215007890853,
+      "bitget_bps": "4.524",
+      "bitget_quote": "0.007330",
+      "binance_bps": "4.919",
+      "binance_quote": "0.007970"
+     },
+     "300": {
+      "sample_ns": 1793154455007890853,
+      "bitget_bps": "7.438",
+      "bitget_quote": "0.012050",
+      "binance_bps": "8.203",
+      "binance_quote": "0.013290"
+     },
+     "900": {
+      "sample_ns": 1793155055007890853,
+      "bitget_bps": "10.894",
+      "bitget_quote": "0.017650",
+      "binance_bps": "11.190",
+      "binance_quote": "0.018130"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154633634890853,
+    "exec_id": "29",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80916.5",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154634007890853,
+      "bitget_bps": "0.266",
+      "bitget_quote": "0.000430",
+      "binance_bps": "0.334",
+      "binance_quote": "0.000540"
+     },
+     "2": {
+      "sample_ns": 1793154636007890853,
+      "bitget_bps": "-2.033",
+      "bitget_quote": "-0.003290",
+      "binance_bps": "-2.317",
+      "binance_quote": "-0.003750"
+     },
+     "10": {
+      "sample_ns": 1793154644007890853,
+      "bitget_bps": "-4.134",
+      "bitget_quote": "-0.006690",
+      "binance_bps": "-3.714",
+      "binance_quote": "-0.006010"
+     },
+     "60": {
+      "sample_ns": 1793154694007890853,
+      "bitget_bps": "0.760",
+      "bitget_quote": "0.001230",
+      "binance_bps": "1.427",
+      "binance_quote": "0.002310"
+     },
+     "300": {
+      "sample_ns": 1793154934007890853,
+      "bitget_bps": "3.874",
+      "bitget_quote": "0.006270",
+      "binance_bps": "4.282",
+      "binance_quote": "0.006930"
+     },
+     "900": {
+      "sample_ns": 1793155534007890853,
+      "bitget_bps": "-0.216",
+      "bitget_quote": "-0.000350",
+      "binance_bps": "0.340",
+      "binance_quote": "0.000550"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "exec_id": "30",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80923.3",
+    "qty": "0.0001",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154634007890853,
+      "bitget_bps": "1.106",
+      "bitget_quote": "0.000895",
+      "binance_bps": "1.174",
+      "binance_quote": "0.000950"
+     },
+     "2": {
+      "sample_ns": 1793154637007890853,
+      "bitget_bps": "-1.526",
+      "bitget_quote": "-0.001235",
+      "binance_bps": "-1.477",
+      "binance_quote": "-0.001195"
+     },
+     "10": {
+      "sample_ns": 1793154645007890853,
+      "bitget_bps": "-3.293",
+      "bitget_quote": "-0.002665",
+      "binance_bps": "-2.873",
+      "binance_quote": "-0.002325"
+     },
+     "60": {
+      "sample_ns": 1793154695007890853,
+      "bitget_bps": "1.600",
+      "bitget_quote": "0.001295",
+      "binance_bps": "2.268",
+      "binance_quote": "0.001835"
+     },
+     "300": {
+      "sample_ns": 1793154935007890853,
+      "bitget_bps": "4.615",
+      "bitget_quote": "0.003735",
+      "binance_bps": "4.739",
+      "binance_quote": "0.003835"
+     },
+     "900": {
+      "sample_ns": 1793155535007890853,
+      "bitget_bps": "0.624",
+      "bitget_quote": "0.000505",
+      "binance_bps": "1.180",
+      "binance_quote": "0.000955"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154634014890853,
+    "exec_id": "31",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80923.3",
+    "qty": "0.0001",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154634007890853,
+      "bitget_bps": "1.106",
+      "bitget_quote": "0.000895",
+      "binance_bps": "1.174",
+      "binance_quote": "0.000950"
+     },
+     "2": {
+      "sample_ns": 1793154637007890853,
+      "bitget_bps": "-1.526",
+      "bitget_quote": "-0.001235",
+      "binance_bps": "-1.477",
+      "binance_quote": "-0.001195"
+     },
+     "10": {
+      "sample_ns": 1793154645007890853,
+      "bitget_bps": "-3.293",
+      "bitget_quote": "-0.002665",
+      "binance_bps": "-2.873",
+      "binance_quote": "-0.002325"
+     },
+     "60": {
+      "sample_ns": 1793154695007890853,
+      "bitget_bps": "1.600",
+      "bitget_quote": "0.001295",
+      "binance_bps": "2.268",
+      "binance_quote": "0.001835"
+     },
+     "300": {
+      "sample_ns": 1793154935007890853,
+      "bitget_bps": "4.615",
+      "bitget_quote": "0.003735",
+      "binance_bps": "4.739",
+      "binance_quote": "0.003835"
+     },
+     "900": {
+      "sample_ns": 1793155535007890853,
+      "bitget_bps": "0.624",
+      "bitget_quote": "0.000505",
+      "binance_bps": "1.180",
+      "binance_quote": "0.000955"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793154859905890853,
+    "exec_id": "32",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80902.9",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793154860007890853,
+      "bitget_bps": "0.340",
+      "bitget_quote": "0.000550",
+      "binance_bps": "0.365",
+      "binance_quote": "0.000590"
+     },
+     "2": {
+      "sample_ns": 1793154862007890853,
+      "bitget_bps": "-0.315",
+      "bitget_quote": "-0.000510",
+      "binance_bps": "0.365",
+      "binance_quote": "0.000590"
+     },
+     "10": {
+      "sample_ns": 1793154870007890853,
+      "bitget_bps": "-1.143",
+      "bitget_quote": "-0.001850",
+      "binance_bps": "-0.822",
+      "binance_quote": "-0.001330"
+     },
+     "60": {
+      "sample_ns": 1793154920007890853,
+      "bitget_bps": "2.194",
+      "bitget_quote": "0.003550",
+      "binance_bps": "2.824",
+      "binance_quote": "0.004570"
+     },
+     "300": {
+      "sample_ns": 1793155160007890853,
+      "bitget_bps": "-0.105",
+      "bitget_quote": "-0.000170",
+      "binance_bps": "-0.216",
+      "binance_quote": "-0.000350"
+     },
+     "900": {
+      "sample_ns": 1793155760007890853,
+      "bitget_bps": "-1.613",
+      "bitget_quote": "-0.002610",
+      "binance_bps": "-2.107",
+      "binance_quote": "-0.003410"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155005985890853,
+    "exec_id": "33",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80898.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155006007890853,
+      "bitget_bps": "1.094",
+      "bitget_quote": "0.001770",
+      "binance_bps": "0.278",
+      "binance_quote": "0.000450"
+     },
+     "2": {
+      "sample_ns": 1793155008007890853,
+      "bitget_bps": "-1.564",
+      "bitget_quote": "-0.002530",
+      "binance_bps": "-1.119",
+      "binance_quote": "-0.001810"
+     },
+     "10": {
+      "sample_ns": 1793155016007890853,
+      "bitget_bps": "-1.564",
+      "bitget_quote": "-0.002530",
+      "binance_bps": "-1.119",
+      "binance_quote": "-0.001810"
+     },
+     "60": {
+      "sample_ns": 1793155066007890853,
+      "bitget_bps": "-2.713",
+      "bitget_quote": "-0.004390",
+      "binance_bps": "-2.417",
+      "binance_quote": "-0.003910"
+     },
+     "300": {
+      "sample_ns": 1793155306007890853,
+      "bitget_bps": "2.651",
+      "bitget_quote": "0.004290",
+      "binance_bps": "3.480",
+      "binance_quote": "0.005630"
+     },
+     "900": {
+      "sample_ns": 1793155906007890853,
+      "bitget_bps": "-14.827",
+      "bitget_quote": "-0.023990",
+      "binance_bps": "-14.345",
+      "binance_quote": "-0.023210"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155382193890853,
+    "exec_id": "34",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80866.7",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155382007890853,
+      "bitget_bps": "1.441",
+      "bitget_quote": "0.002330",
+      "binance_bps": "2.059",
+      "binance_quote": "0.003330"
+     },
+     "2": {
+      "sample_ns": 1793155385007890853,
+      "bitget_bps": "0.909",
+      "bitget_quote": "0.001470",
+      "binance_bps": "1.502",
+      "binance_quote": "0.002430"
+     },
+     "10": {
+      "sample_ns": 1793155393007890853,
+      "bitget_bps": "1.094",
+      "bitget_quote": "0.001770",
+      "binance_bps": "1.502",
+      "binance_quote": "0.002430"
+     },
+     "60": {
+      "sample_ns": 1793155443007890853,
+      "bitget_bps": "-3.036",
+      "bitget_quote": "-0.004910",
+      "binance_bps": "-2.418",
+      "binance_quote": "-0.003910"
+     },
+     "300": {
+      "sample_ns": 1793155683007890853,
+      "bitget_bps": "-2.875",
+      "bitget_quote": "-0.004650",
+      "binance_bps": "-2.603",
+      "binance_quote": "-0.004210"
+     },
+     "900": {
+      "sample_ns": 1793156283007890853,
+      "bitget_bps": "-10.480",
+      "bitget_quote": "-0.016950",
+      "binance_bps": "-9.874",
+      "binance_quote": "-0.015970"
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155503170890853,
+    "exec_id": "35",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80896.2",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155503007890853,
+      "bitget_bps": "1.094",
+      "bitget_quote": "0.001770",
+      "binance_bps": "1.094",
+      "binance_quote": "0.001770"
+     },
+     "2": {
+      "sample_ns": 1793155506007890853,
+      "bitget_bps": "-3.665",
+      "bitget_quote": "-0.005930",
+      "binance_bps": "-3.616",
+      "binance_quote": "-0.005850"
+     },
+     "10": {
+      "sample_ns": 1793155514007890853,
+      "bitget_bps": "-3.307",
+      "bitget_quote": "-0.005350",
+      "binance_bps": "-0.130",
+      "binance_quote": "-0.000210"
+     },
+     "60": {
+      "sample_ns": 1793155564007890853,
+      "bitget_bps": "-0.192",
+      "bitget_quote": "-0.000310",
+      "binance_bps": "-0.253",
+      "binance_quote": "-0.000410"
+     },
+     "300": {
+      "sample_ns": 1793155804007890853,
+      "bitget_bps": "2.491",
+      "bitget_quote": "0.004030",
+      "binance_bps": "2.516",
+      "binance_quote": "0.004070"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155745193890853,
+    "exec_id": "36",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "80910.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155745007890853,
+      "bitget_bps": "1.428",
+      "bitget_quote": "0.002310",
+      "binance_bps": "1.736",
+      "binance_quote": "0.002810"
+     },
+     "2": {
+      "sample_ns": 1793155748007890853,
+      "bitget_bps": "-0.328",
+      "bitget_quote": "-0.000530",
+      "binance_bps": "-0.488",
+      "binance_quote": "-0.000790"
+     },
+     "10": {
+      "sample_ns": 1793155756007890853,
+      "bitget_bps": "-0.637",
+      "bitget_quote": "-0.001030",
+      "binance_bps": "-0.884",
+      "binance_quote": "-0.001430"
+     },
+     "60": {
+      "sample_ns": 1793155806007890853,
+      "bitget_bps": "-0.711",
+      "bitget_quote": "-0.001150",
+      "binance_bps": "-0.735",
+      "binance_quote": "-0.001190"
+     },
+     "300": {
+      "sample_ns": 1793156046007890853,
+      "bitget_bps": "-2.923",
+      "bitget_quote": "-0.004730",
+      "binance_bps": "-2.663",
+      "binance_quote": "-0.004310"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155863431890853,
+    "exec_id": "37",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81008.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155863007890853,
+      "bitget_bps": "1.870",
+      "bitget_quote": "0.003030",
+      "binance_bps": "2.031",
+      "binance_quote": "0.003290"
+     },
+     "2": {
+      "sample_ns": 1793155866007890853,
+      "bitget_bps": "-2.426",
+      "bitget_quote": "-0.003930",
+      "binance_bps": "-2.142",
+      "binance_quote": "-0.003470"
+     },
+     "10": {
+      "sample_ns": 1793155874007890853,
+      "bitget_bps": "-0.895",
+      "bitget_quote": "-0.001450",
+      "binance_bps": "0.327",
+      "binance_quote": "0.000530"
+     },
+     "60": {
+      "sample_ns": 1793155924007890853,
+      "bitget_bps": "-2.031",
+      "bitget_quote": "-0.003290",
+      "binance_bps": "-1.413",
+      "binance_quote": "-0.002290"
+     },
+     "300": {
+      "sample_ns": 1793156164007890853,
+      "bitget_bps": "8.993",
+      "bitget_quote": "0.014570",
+      "binance_bps": "9.240",
+      "binance_quote": "0.014970"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155863453890853,
+    "exec_id": "38",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81018.6",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155863007890853,
+      "bitget_bps": "3.129",
+      "bitget_quote": "0.005070",
+      "binance_bps": "3.289",
+      "binance_quote": "0.005330"
+     },
+     "2": {
+      "sample_ns": 1793155866007890853,
+      "bitget_bps": "-1.166",
+      "bitget_quote": "-0.001890",
+      "binance_bps": "-0.883",
+      "binance_quote": "-0.001430"
+     },
+     "10": {
+      "sample_ns": 1793155874007890853,
+      "bitget_bps": "0.364",
+      "bitget_quote": "0.000590",
+      "binance_bps": "1.586",
+      "binance_quote": "0.002570"
+     },
+     "60": {
+      "sample_ns": 1793155924007890853,
+      "bitget_bps": "-0.771",
+      "bitget_quote": "-0.001250",
+      "binance_bps": "-0.154",
+      "binance_quote": "-0.000250"
+     },
+     "300": {
+      "sample_ns": 1793156164007890853,
+      "bitget_bps": "10.251",
+      "bitget_quote": "0.016610",
+      "binance_bps": "10.498",
+      "binance_quote": "0.017010"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155894371890853,
+    "exec_id": "39",
+    "symbol": "BTCUSDT",
+    "side": "buy",
+    "price": "80989.4",
+    "qty": "0.0002",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155894007890853,
+      "bitget_bps": "1.303",
+      "bitget_quote": "0.002110",
+      "binance_bps": "1.117",
+      "binance_quote": "0.001810"
+     },
+     "2": {
+      "sample_ns": 1793155897007890853,
+      "bitget_bps": "0.414",
+      "bitget_quote": "0.000670",
+      "binance_bps": "0.586",
+      "binance_quote": "0.000950"
+     },
+     "10": {
+      "sample_ns": 1793155905007890853,
+      "bitget_bps": "3.031",
+      "bitget_quote": "0.004910",
+      "binance_bps": "3.068",
+      "binance_quote": "0.004970"
+     },
+     "60": {
+      "sample_ns": 1793155955007890853,
+      "bitget_bps": "1.315",
+      "bitget_quote": "0.002130",
+      "binance_bps": "0.624",
+      "binance_quote": "0.001010"
+     },
+     "300": {
+      "sample_ns": 1793156195007890853,
+      "bitget_bps": "-4.871",
+      "bitget_quote": "-0.007890",
+      "binance_bps": "-4.871",
+      "binance_quote": "-0.007890"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "exec_id": "40",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81010.9",
+    "qty": "0.0001",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155904007890853,
+      "bitget_bps": "1.364",
+      "bitget_quote": "0.001105",
+      "binance_bps": "0.117",
+      "binance_quote": "0.000095"
+     },
+     "2": {
+      "sample_ns": 1793155906007890853,
+      "bitget_bps": "-0.895",
+      "bitget_quote": "-0.000725",
+      "binance_bps": "-0.414",
+      "binance_quote": "-0.000335"
+     },
+     "10": {
+      "sample_ns": 1793155914007890853,
+      "bitget_bps": "-1.808",
+      "bitget_quote": "-0.001465",
+      "binance_bps": "-1.784",
+      "binance_quote": "-0.001445"
+     },
+     "60": {
+      "sample_ns": 1793155964007890853,
+      "bitget_bps": "2.882",
+      "bitget_quote": "0.002335",
+      "binance_bps": "3.067",
+      "binance_quote": "0.002485"
+     },
+     "300": {
+      "sample_ns": 1793156204007890853,
+      "bitget_bps": "6.573",
+      "bitget_quote": "0.005325",
+      "binance_bps": "6.339",
+      "binance_quote": "0.005135"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   },
+   {
+    "ts_ns": 1793155903972890853,
+    "exec_id": "41",
+    "symbol": "BTCUSDT",
+    "side": "sell",
+    "price": "81010.9",
+    "qty": "0.0001",
+    "level": 0,
+    "horizons": {
+     "0": {
+      "sample_ns": 1793155904007890853,
+      "bitget_bps": "1.364",
+      "bitget_quote": "0.001105",
+      "binance_bps": "0.117",
+      "binance_quote": "0.000095"
+     },
+     "2": {
+      "sample_ns": 1793155906007890853,
+      "bitget_bps": "-0.895",
+      "bitget_quote": "-0.000725",
+      "binance_bps": "-0.414",
+      "binance_quote": "-0.000335"
+     },
+     "10": {
+      "sample_ns": 1793155914007890853,
+      "bitget_bps": "-1.808",
+      "bitget_quote": "-0.001465",
+      "binance_bps": "-1.784",
+      "binance_quote": "-0.001445"
+     },
+     "60": {
+      "sample_ns": 1793155964007890853,
+      "bitget_bps": "2.882",
+      "bitget_quote": "0.002335",
+      "binance_bps": "3.067",
+      "binance_quote": "0.002485"
+     },
+     "300": {
+      "sample_ns": 1793156204007890853,
+      "bitget_bps": "6.573",
+      "bitget_quote": "0.005325",
+      "binance_bps": "6.339",
+      "binance_quote": "0.005135"
+     },
+     "900": {
+      "sample_ns": null,
+      "bitget_bps": null,
+      "bitget_quote": null,
+      "binance_bps": null,
+      "binance_quote": null
+     }
+    }
+   }
+  ],
+  "aggregate": {
+   "0": {
+    "bitget": {
+     "count": 41,
+     "mean_bps": "1.697",
+     "median_bps": "1.502",
+     "quote_sum": "0.108530",
+     "positive": 39,
+     "positive_share": "95.12%"
+    },
+    "binance": {
+     "count": 41,
+     "mean_bps": "1.473",
+     "median_bps": "1.230",
+     "quote_sum": "0.095550",
+     "positive": 39,
+     "positive_share": "95.12%"
+    }
+   },
+   "2": {
+    "bitget": {
+     "count": 41,
+     "mean_bps": "-0.614",
+     "median_bps": "-0.328",
+     "quote_sum": "-0.036770",
+     "positive": 11,
+     "positive_share": "26.83%"
+    },
+    "binance": {
+     "count": 41,
+     "mean_bps": "-0.423",
+     "median_bps": "-0.292",
+     "quote_sum": "-0.024950",
+     "positive": 18,
+     "positive_share": "43.90%"
+    }
+   },
+   "10": {
+    "bitget": {
+     "count": 41,
+     "mean_bps": "-0.727",
+     "median_bps": "-1.061",
+     "quote_sum": "-0.039930",
+     "positive": 13,
+     "positive_share": "31.71%"
+    },
+    "binance": {
+     "count": 41,
+     "mean_bps": "-0.371",
+     "median_bps": "-0.713",
+     "quote_sum": "-0.017030",
+     "positive": 16,
+     "positive_share": "39.02%"
+    }
+   },
+   "60": {
+    "bitget": {
+     "count": 41,
+     "mean_bps": "0.955",
+     "median_bps": "0.564",
+     "quote_sum": "0.056230",
+     "positive": 25,
+     "positive_share": "60.98%"
+    },
+    "binance": {
+     "count": 41,
+     "mean_bps": "1.116",
+     "median_bps": "0.624",
+     "quote_sum": "0.065510",
+     "positive": 24,
+     "positive_share": "58.54%"
+    }
+   },
+   "300": {
+    "bitget": {
+     "count": 41,
+     "mean_bps": "2.320",
+     "median_bps": "3.208",
+     "quote_sum": "0.136270",
+     "positive": 28,
+     "positive_share": "68.29%"
+    },
+    "binance": {
+     "count": 41,
+     "mean_bps": "2.448",
+     "median_bps": "3.368",
+     "quote_sum": "0.144950",
+     "positive": 28,
+     "positive_share": "68.29%"
+    }
+   },
+   "900": {
+    "bitget": {
+     "count": 34,
+     "mean_bps": "1.863",
+     "median_bps": "0.587",
+     "quote_sum": "0.101870",
+     "positive": 18,
+     "positive_share": "52.94%"
+    },
+    "binance": {
+     "count": 34,
+     "mean_bps": "1.941",
+     "median_bps": "0.680",
+     "quote_sum": "0.105210",
+     "positive": 19,
+     "positive_share": "55.88%"
+    }
+   }
+  },
+  "missing": 7,
+  "quoting_span_s": "7200.887",
+  "by_level": [
+   {
+    "level": 0,
+    "fills": 41,
+    "fills_per_hour": "20.50",
+    "horizons": {
+     "0": {
+      "bitget": {
+       "count": 41,
+       "mean_bps": "1.697",
+       "median_bps": "1.502",
+       "quote_sum": "0.108530",
+       "positive": 39,
+       "positive_share": "95.12%"
+      },
+      "binance": {
+       "count": 41,
+       "mean_bps": "1.473",
+       "median_bps": "1.230",
+       "quote_sum": "0.095550",
+       "positive": 39,
+       "positive_share": "95.12%"
+      }
+     },
+     "2": {
+      "bitget": {
+       "count": 41,
+       "mean_bps": "-0.614",
+       "median_bps": "-0.328",
+       "quote_sum": "-0.036770",
+       "positive": 11,
+       "positive_share": "26.83%"
+      },
+      "binance": {
+       "count": 41,
+       "mean_bps": "-0.423",
+       "median_bps": "-0.292",
+       "quote_sum": "-0.024950",
+       "positive": 18,
+       "positive_share": "43.90%"
+      }
+     },
+     "10": {
+      "bitget": {
+       "count": 41,
+       "mean_bps": "-0.727",
+       "median_bps": "-1.061",
+       "quote_sum": "-0.039930",
+       "positive": 13,
+       "positive_share": "31.71%"
+      },
+      "binance": {
+       "count": 41,
+       "mean_bps": "-0.371",
+       "median_bps": "-0.713",
+       "quote_sum": "-0.017030",
+       "positive": 16,
+       "positive_share": "39.02%"
+      }
+     },
+     "60": {
+      "bitget": {
+       "count": 41,
+       "mean_bps": "0.955",
+       "median_bps": "0.564",
+       "quote_sum": "0.056230",
+       "positive": 25,
+       "positive_share": "60.98%"
+      },
+      "binance": {
+       "count": 41,
+       "mean_bps": "1.116",
+       "median_bps": "0.624",
+       "quote_sum": "0.065510",
+       "positive": 24,
+       "positive_share": "58.54%"
+      }
+     },
+     "300": {
+      "bitget": {
+       "count": 41,
+       "mean_bps": "2.320",
+       "median_bps": "3.208",
+       "quote_sum": "0.136270",
+       "positive": 28,
+       "positive_share": "68.29%"
+      },
+      "binance": {
+       "count": 41,
+       "mean_bps": "2.448",
+       "median_bps": "3.368",
+       "quote_sum": "0.144950",
+       "positive": 28,
+       "positive_share": "68.29%"
+      }
+     },
+     "900": {
+      "bitget": {
+       "count": 34,
+       "mean_bps": "1.863",
+       "median_bps": "0.587",
+       "quote_sum": "0.101870",
+       "positive": 18,
+       "positive_share": "52.94%"
+      },
+      "binance": {
+       "count": 34,
+       "mean_bps": "1.941",
+       "median_bps": "0.680",
+       "quote_sum": "0.105210",
+       "positive": 19,
+       "positive_share": "55.88%"
+      }
+     }
+    }
+   }
+  ]
+ },
+ "push_order": {
+  "fills": [],
+  "first": {
+   "order_separate_read": 0,
+   "order_same_read": 0,
+   "fast_fill_separate_read": 0,
+   "fast_fill_same_read": 0,
+   "unmatched": 0
+  },
+  "same_read": 0,
+  "journal_gap_ms": null,
+  "venue_ts_gap_ms": null,
+  "account_lag_ms": null,
+  "scope": {
+   "maker": 0,
+   "taker": 0
+  },
+  "booked": {
+   "available": true,
+   "checked": 0,
+   "mismatches": [],
+   "partially_filled": 0,
+   "no_record": 0
+  },
+  "unmatched": [],
+  "unavailable": []
+ },
+ "verdict": {
+  "D6 (t2t share at le 26 us >= 0.90)": {
+   "ok": null,
+   "detail": "n/a: no metrics"
+  },
+  "hot allocs 0 in B": {
+   "ok": null,
+   "detail": "n/a: no metrics"
+  },
+  "rejects": {
+   "ok": true,
+   "place_other": [],
+   "cancel_other": [],
+   "frame": [],
+   "cancel_25204": 0,
+   "cancel_25204_reconciled": 0,
+   "unreconciled_coids": [],
+   "frame_25204_explained": [],
+   "frame_25204_race_explained": [],
+   "frame_25204_unexplained": [],
+   "frame_25204_venue_error_unpaired": 0,
+   "frame_25204_metrics": null,
+   "detail": "place other than 40015: none; cancel other than 25204: none; frame: none; 25204 on cancel: 0 of 0 reconciled against booked within 1 s; metrics n/a: no metrics"
+  },
+  "fill correct-down 0": {
+   "ok": true,
+   "detail": "metrics n/a: no metrics, booked correct_down 0"
+  },
+  "drift 0": {
+   "ok": true,
+   "detail": "snapshots 121, unclean 0, skipped in the race window 0, streak n/a: no metrics"
+  },
+  "foreign activity 0": {
+   "ok": true,
+   "detail": "metrics n/a: no metrics, journal 0"
+  },
+  "halt 0": {
+   "ok": true,
+   "detail": "pixiu_halt n/a: no metrics, tripped 0"
+  },
+  "summary": "pass (5 of 7, 2 n/a)"
+ }
+}
