@@ -35,3 +35,12 @@ fn ts_magnitudes() {
     );
     assert_eq!(parse_ts("1793149201.5"), Some(1_793_149_201_500_000_000));
 }
+
+#[test]
+fn iso_ts_column_from_live_evidence() {
+    let text = "ts\tbitget_bid\tbitget_ask\tbinance_bid\tbinance_ask\n\
+                2026-10-11T06:16:08.000Z\t82997\t82997.1\t82999.30\t82999.40\n";
+    let r = read_basis_tsv(text.as_bytes()).expect("读取");
+    assert_eq!(r.malformed, 0);
+    assert_eq!(r.rows[0].ts, 1_791_699_368_000_000_000);
+}

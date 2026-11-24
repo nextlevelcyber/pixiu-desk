@@ -68,8 +68,12 @@ pub struct BasisRead {
 
 const NS: i128 = 1_000_000_000;
 
-/// `ts` 列：按数量级区分秒、毫秒、微秒、纳秒（与 `live_report.py` 的 `parse_ts` 一致，ISO 8601 不支持）。
+/// `ts` 列：数字按数量级区分秒、毫秒、微秒、纳秒，或 ISO 8601（实盘证据目录的采样 TSV 用它）；
+/// 与 `live_report.py` 的 `parse_ts` 一致。
 fn parse_ts(text: &str) -> Option<i64> {
+    if text.contains('-') && text.contains('T') {
+        return crate::timefmt::parse_iso_ns(text);
+    }
     let d = Fx::parse(text).ok()?;
     let mag = d.abs();
     let scale: i128 = if mag >= Fx::new(100_000_000_000_000_000, 0) {
