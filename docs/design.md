@@ -100,7 +100,14 @@ backtest_params(run_id, params_json, model_note, fill_model, tape_time, inputs_j
 - FIFO 已实现盈亏、按 mark 计价的未实现盈亏、按币种的手续费，和 `live_report.py` 第 3 节一致。
 - 实盘曲线以 Prometheus 录制规则为准（权威）。desk 的 FIFO 结果和它交叉核对，差异显示在「数据核对」页，不自动修正。
 
-### 5.3 数据核对（对应 Bedrock 的「数据核对」页）
+### 5.3 收益拆分
+
+参考 Bitget 中间价，起点为空仓：价差收益 = Σ 0 秒 markout 的计价币金额；逆向选择 = Σ(60 秒 − 0 秒)；
+库存漂移 = 交易盈亏 − Σ 60 秒 markout（残差）；减去手续费即合计，与 FIFO total 精确相等（`src/breakdown.rs`，
+黄金样本上有测试）。资金费和体系外部分不在 journal 里：实盘运行从 Prometheus 读运行结束时的
+`pixiu:outside_pnl:usdt`，单独显示，不计入合计。
+
+### 5.4 数据核对（对应 Bedrock 的「数据核对」页）
 
 - `fill` 和 `booked` 的配对率，journal 丢记录的计数（`pixiu_journal_money_dropped_total`），覆盖缺口（某段时间没有 journal 或 `.pxr`），journal 时钟和交易所时钟的偏差。
 
@@ -186,7 +193,7 @@ desk 的 ingest 发现 `backtests/<run-id>/` 后入库，回测结果会自动�
 - [x] Prometheus 只读代理，总览页（进程、合约、告警、最近运行）和实盘页（Grafana 两个看板的查询）
 - [x] 运行详情页：累计盈亏曲线、价格与成交点、markout（均值和中位数、逐笔散点、按 level）、成交表、回测参数；对比页
 - [x] systemd unit 加部署说明（`docs/deploy.md`；在 ledger 机器上安装需要你批准）
-- [ ] 瀑布拆分（成交、库存、手续费、资金费、体系外）和数据核对页
+- [x] 收益拆分（价差收益、逆向选择 0–60 秒、库存漂移、手续费；实盘另显示权益线上的资金费和体系外）和数据核对页
 - [ ] 在 ledger 机器上部署（ARM64 构建，需要你批准）
 - [ ] 真实实盘运行的导入（等第 8 节第 4 条的 journal 上传）
 

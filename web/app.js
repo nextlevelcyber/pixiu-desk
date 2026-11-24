@@ -475,6 +475,25 @@
     add(pnl.body, curveBox, priceBox);
     add(main, pnl);
 
+    const bd = run.breakdown && run.breakdown[symbol];
+    const wf = sheet("收益拆分 · " + symbol, "参考 Bitget 中间价；合计与上面的 FIFO total 精确相等");
+    const wfBox = h("div", { class: "chart" });
+    const outside = h("div", { class: "note" });
+    if (bd) {
+      add(wf.body, h("div", { class: "kpis" },
+        kv("价差收益", money(bd.edge)), kv("逆向选择（0–" + bd.horizon_s + " 秒）", money(bd.adverse)),
+        kv("库存漂移（" + bd.horizon_s + " 秒后）", money(bd.drift)), kv("手续费", fee(bd.fees)), kvb("合计", money(bd.total))),
+        wfBox,
+        h("div", { class: "note" },
+          "价差收益 = Σ 成交时（0 秒）中间价与成交价之差 × 数量；逆向选择 = Σ(" + bd.horizon_s + " 秒 markout − 0 秒 markout)；",
+          "库存漂移 = 交易盈亏 − Σ " + bd.horizon_s + " 秒 markout（之后剩余持仓随价格的变动）。",
+          bd.missing_edge || bd.missing_horizon ? "缺样本的成交：0 秒 " + bd.missing_edge + " 笔、" + bd.horizon_s + " 秒 " + bd.missing_horizon + " 笔，按 0 计入，差额落在库存漂移里。" : ""),
+        run.source === "live" ? outside : null);
+    } else {
+      add(wf.body, h("div", { class: "empty" }, "没有拆分：这次运行缺样本（或导入时 desk 版本较旧，用 import --force 重新导入）。"));
+    }
+    add(main, wf);
+
     const mo = sheet("markout · " + symbol, "sign × (参考中间价 − 成交价) / 成交价 × 10000；正值表示市场朝有利于这笔成交的方向走");
     add(mo.head, h("span", { class: "spacer" }), seg([["bitget", "Bitget 中间价"], ["binance", "Binance 中间价"]], ref, k => { state.prefs.ref = k; savePrefs(); route(); }));
     const moBox = h("div", { class: "chart" });
@@ -494,6 +513,10 @@
     add(ft.body, fillsTable(mine, ref));
     add(main, ft);
 
+    const ck = sheet("数据核对", "输入是否完整、彼此是否对得上");
+    add(ck.body, run.checks ? checksTable(run.checks) : h("div", { class: "empty" }, "没有核对结果（用 import --force 重新导入）。"));
+    add(main, ck);
+
     if (run.summary) {
       const s = run.summary;
       const bt = sheet("回测参数", (s.fill_model && s.fill_model.used ? "成交模型 " + s.fill_model.used : "") + (s.tape_time ? " · 磁带时间 " + s.tape_time : ""));
@@ -508,10 +531,66 @@
     drawCurve(curveBox, curve);
     drawPrice(priceBox, curve, mine);
     if (m) { drawMarkout(moBox, [{ name: "", m }], ref); drawScatter(scatterBox, mine, hzPick, ref); }
+    if (bd) drawWaterfall(wfBox, bd);
+    if (bd && run.source === "live") outsideNote(outside, run);
   }
   function kv(label, value) { return h("span", { class: "kpi" }, h("span", { class: "lbl" }, label), h("b", null, value)); }
   function kvb(label, value) { return h("span", { class: "kpi big" }, h("span", { class: "lbl" }, label), h("b", null, value)); }
 
+  /* 实盘运行：Prometheus 里这次运行结束时的「体系外」部分（资金费、手工成交、划转），不计入上面的合计。 */
+  async function outsideNote(el, run) {
+    const t = Math.floor((run.stopped_ns || 0) / 1e9);
+    try {
+      const j = await api("/api/prom/query?query=" + encodeURIComponent("last_over_time(pixiu:outside_pnl:usdt[10m])") + "&time=" + t);
+      const r = j.data && j.data.result;
+      if (!r || !r.length) { fill(el, "资金费和体系外：Prometheus 里没有这次运行结束时的权益线。"); return; }
+      fill(el, "资金费和体系外（权益线，运行结束时，不计入上面的合计）：", money(r[0].value[1]), " USDT");
+    } catch (e) {
+      fill(el, "资金费和体系外：读不到 Prometheus（" + e.message + "）。");
+    }
+  }
+  function drawWaterfall(el, bd) {
+    const parts = [["价差收益", Number(bd.edge)], ["逆向选择", Number(bd.adverse)], ["库存漂移", Number(bd.drift)]];
+    if (isNum(bd.fees)) parts.push(["手续费", -Number(bd.fees)]);
+    const base = [], up = [], down = [];
+    let acc = 0;
+    parts.forEach(([, v]) => {
+      const next = acc + v;
+      base.push(Math.min(acc, next));
+      up.push(v >= 0 ? v : null);
+      down.push(v < 0 ? -v : null);
+      acc = next;
+    });
+    const total = Number(bd.total);
+    base.push(Math.min(0, total));
+    up.push(total >= 0 ? total : null);
+    down.push(total < 0 ? -total : null);
+    const labels = parts.map(p => p[0]).concat(["合计"]);
+    const values = parts.map(p => p[1]).concat([total]);
+    const c = chartIn(el);
+    c.setOption(baseOption({
+      legend: { show: false },
+      grid: { left: 64, right: 24, top: 24, bottom: 36 },
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: css("--sheet"), borderColor: css("--rule"), textStyle: { color: css("--ink") },
+        formatter: ps => { const i = ps[0].dataIndex; return labels[i] + "：" + (values[i] > 0 ? "+" : "") + values[i].toFixed(6); } },
+      xAxis: Object.assign({ type: "category", data: labels }, axisStyle()),
+      yAxis: valueAxis("", { scale: false }),
+      series: [
+        { type: "bar", stack: "w", data: base, itemStyle: { color: "transparent" }, emphasis: { disabled: true } },
+        { name: "增加", type: "bar", stack: "w", data: up, barMaxWidth: 64, itemStyle: { color: css("--green") } },
+        { name: "减少", type: "bar", stack: "w", data: down, barMaxWidth: 64, itemStyle: { color: css("--red") } },
+      ],
+    }));
+  }
+  function checksTable(groups) {
+    const chip = v => v === "ok" ? h("span", { class: "chip ok" }, "通过") : v === "warn" ? h("span", { class: "chip warn" }, "注意") : h("span", { class: "chip" }, "无从判断");
+    return h("div", { class: "scroll" }, h("table", null,
+      h("thead", null, h("tr", null, ["", "项目", "数值", "说明"].map(t => h("th", null, t)))),
+      h("tbody", null, groups.map(g => [
+        h("tr", null, h("td", { colspan: 4, class: "grp" }, g.group)),
+        g.items.map(i => h("tr", null, h("td", null, chip(i.verdict)), h("td", null, i.name), h("td", { class: "wrap" }, i.value), h("td", { class: "wrap sub" }, i.note))),
+      ]))));
+  }
   function markoutTable(m, ref) {
     const agg = m.aggregate || {};
     return h("div", { class: "scroll" }, h("table", null,

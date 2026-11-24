@@ -13,7 +13,7 @@ use serde_json::Value;
 
 use crate::analysis::{CurvePoint, Fill, MarkoutCell};
 
-const SCHEMA_VERSION: i64 = 1;
+const SCHEMA_VERSION: i64 = 2;
 
 const SCHEMA: &str = "
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -34,7 +34,9 @@ CREATE TABLE IF NOT EXISTS runs (
     summary      TEXT,                   -- 回测的 summary.json 原文
     meta         TEXT,                   -- desk-meta.json 原文
     sample_ms    INTEGER,                -- markout 样本的间隔
-    imported_ns  INTEGER NOT NULL
+    imported_ns  INTEGER NOT NULL,
+    breakdown    TEXT,                   -- JSON：交易对 -> 收益拆分（第 2 版起）
+    checks       TEXT                    -- JSON：数据核对的分组（第 2 版起）
 );
 CREATE TABLE IF NOT EXISTS fills (
     run_id     TEXT NOT NULL,
@@ -98,6 +100,8 @@ pub struct RunData<'a> {
     pub summary: Option<&'a str>,
     pub meta: Option<&'a str>,
     pub sample_ms: Option<i64>,
+    pub breakdown: Value,
+    pub checks: Value,
     pub fills: &'a [Fill],
     pub markouts: &'a [(String, MarkoutCell)],
     pub curves: &'a [(String, Vec<CurvePoint>)],
@@ -122,6 +126,8 @@ pub struct RunRow {
     pub meta: Option<Value>,
     pub sample_ms: Option<i64>,
     pub imported_ns: i64,
+    pub breakdown: Option<Value>,
+    pub checks: Option<Value>,
 }
 
 /// 一笔成交及其 markout（网页的成交表）。
@@ -188,6 +194,16 @@ impl Store {
                 )?;
             }
             Some(v) if v == SCHEMA_VERSION.to_string() => {}
+            Some(v) if v == "1" => {
+                // 第 1 版 → 第 2 版：加两列；旧运行的这两列为空，重新导入（--force）后补齐。
+                conn.execute_batch(
+                    "BEGIN;
+                     ALTER TABLE runs ADD COLUMN breakdown TEXT;
+                     ALTER TABLE runs ADD COLUMN checks TEXT;
+                     UPDATE meta SET value = '2' WHERE key = 'schema';
+                     COMMIT;",
+                )?;
+            }
             Some(v) => anyhow::bail!("数据库 schema 版本是 {v}，本程序需要 {SCHEMA_VERSION}"),
         }
         Ok(Store { conn })
@@ -217,8 +233,9 @@ impl Store {
         tx.execute(
             "INSERT INTO runs (run_id, source, label, started_ns, stopped_ns, config_hash, version,
                                mode, fingerprint, fills, symbols, pnl, markout, summary, meta,
-                               sample_ms, imported_ns)
-             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17)",
+                               sample_ms, imported_ns, breakdown, checks)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17,
+                     ?18, ?19)",
             params![
                 d.run_id,
                 d.source,
@@ -237,6 +254,8 @@ impl Store {
                 d.meta,
                 d.sample_ms,
                 imported_ns,
+                d.breakdown.to_string(),
+                d.checks.to_string(),
             ],
         )?;
         {
@@ -315,11 +334,14 @@ impl Store {
             meta: parse_json(r.get(13)?),
             sample_ms: r.get(14)?,
             imported_ns: r.get(15)?,
+            breakdown: parse_json(r.get(16)?),
+            checks: parse_json(r.get(17)?),
         })
     }
 
     const RUN_COLUMNS: &'static str = "run_id, source, label, started_ns, stopped_ns, config_hash,
-        version, mode, fills, symbols, pnl, markout, summary, meta, sample_ms, imported_ns";
+        version, mode, fills, symbols, pnl, markout, summary, meta, sample_ms, imported_ns,
+        breakdown, checks";
 
     /// 全部运行，最新的在前。
     pub fn runs(&self) -> Result<Vec<RunRow>> {

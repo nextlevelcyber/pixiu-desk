@@ -149,3 +149,96 @@ fn dir_without_journal_is_refused() {
     let mut store = Store::open_in_memory().expect("数据库");
     assert!(import_dir(&mut store, tmp.path(), None, &Options::default(), 1).is_err());
 }
+
+#[test]
+fn golden_breakdown_sums_to_total_and_checks_pass() {
+    let mut store = Store::open_in_memory().expect("数据库");
+    import_dir(
+        &mut store,
+        &golden_dir(),
+        Some("bt-1"),
+        &Options::default(),
+        1,
+    )
+    .expect("导入");
+    let run = store.run("bt-1").expect("查询").expect("运行");
+    let b = &run.breakdown.expect("有拆分")["BTCUSDT"];
+    let fx = |k: &str| crate::fx::Fx::parse(b[k].as_str().expect("字符串")).expect("数");
+    let sum = fx("edge")
+        .plus(fx("adverse"))
+        .and_then(|x| x.plus(fx("drift")))
+        .and_then(|x| x.minus(fx("fees")))
+        .expect("合计");
+    assert_eq!(
+        sum.to_plain(),
+        run.pnl["BTCUSDT"]["total"].as_str().expect("total")
+    );
+    assert_eq!(b["fills"], 41);
+    // 0 秒价差收益 = live_report 的 0 秒 Bitget quote_sum。
+    let text = std::fs::read_to_string(golden_dir().join("live_report.json")).expect("黄金样本");
+    let golden: Value = serde_json::from_str(&text).expect("JSON");
+    let q0 = crate::fx::Fx::parse(
+        golden["markout"]["aggregate"]["0"]["bitget"]["quote_sum"]
+            .as_str()
+            .expect("quote_sum"),
+    )
+    .expect("数");
+    assert_eq!(fx("edge").round_to(6).expect("舍入"), q0);
+
+    let checks = run.checks.expect("有核对");
+    let warns: Vec<String> = checks
+        .as_array()
+        .expect("数组")
+        .iter()
+        .flat_map(|g| g["items"].as_array().cloned().unwrap_or_default())
+        .filter(|i| i["verdict"] == "warn")
+        .map(|i| format!("{} = {}", i["name"], i["value"]))
+        .collect();
+    // 回测运行末尾的成交缺长 horizon 样本（7 格），以及运行结束时仍未终结的订单没有手续费，属正常的提示。
+    assert!(
+        warns
+            .iter()
+            .all(|w| w.contains("markout 缺格") || w.contains("没有手续费")),
+        "{warns:?}"
+    );
+}
+
+#[test]
+fn schema_v1_database_is_upgraded() {
+    let tmp = tempfile::tempdir().expect("临时目录");
+    let path = tmp.path().join("old.sqlite");
+    {
+        let c = rusqlite::Connection::open(&path).expect("打开");
+        c.execute_batch(
+            "CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+             INSERT INTO meta VALUES ('schema', '1');
+             CREATE TABLE runs (run_id TEXT PRIMARY KEY, source TEXT NOT NULL, label TEXT,
+               started_ns INTEGER, stopped_ns INTEGER, config_hash TEXT, version TEXT, mode TEXT,
+               fingerprint TEXT NOT NULL, fills INTEGER NOT NULL, symbols TEXT NOT NULL,
+               pnl TEXT NOT NULL, markout TEXT NOT NULL, summary TEXT, meta TEXT, sample_ms INTEGER,
+               imported_ns INTEGER NOT NULL);
+             INSERT INTO runs VALUES ('old', 'live', NULL, 1, 2, NULL, NULL, NULL, 'f', 0, '{}',
+               '{}', '{}', NULL, NULL, NULL, 3);",
+        )
+        .expect("建第 1 版");
+    }
+    let mut store = Store::open(&path).expect("升级");
+    let old = store.run("old").expect("查询").expect("旧运行还在");
+    assert!(old.breakdown.is_none() && old.checks.is_none());
+    import_dir(
+        &mut store,
+        &golden_dir(),
+        Some("bt-1"),
+        &Options::default(),
+        1,
+    )
+    .expect("导入");
+    assert!(
+        store
+            .run("bt-1")
+            .expect("查询")
+            .expect("运行")
+            .breakdown
+            .is_some()
+    );
+}

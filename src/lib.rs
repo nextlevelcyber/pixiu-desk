@@ -4,6 +4,8 @@
 //! → 导入（`ingest`）→ 对外（`prom`、`web`）。设计见 `docs/design.md`。
 
 pub mod analysis;
+pub mod breakdown;
+pub mod check;
 pub mod config;
 pub mod fx;
 pub mod ingest;

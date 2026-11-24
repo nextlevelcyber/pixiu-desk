@@ -238,6 +238,21 @@ pub fn import_dir(
             analysis::pnl_curve(&mine, &fees, rows, opt.curve_ms * 1_000_000)?,
         ));
     }
+    // 收益拆分（每个合约）与数据核对。
+    let mut breakdowns = serde_json::Map::new();
+    for (sym, row) in &a.pnl {
+        let mine: Vec<&analysis::Fill> = a.fills.iter().filter(|f| &f.symbol == sym).collect();
+        let cells: Vec<(&str, &MarkoutCell)> = markouts
+            .iter()
+            .filter(|(id, _)| mine.iter().any(|f| &f.exec_id == id))
+            .map(|(id, c)| (id.as_str(), c))
+            .collect();
+        if samples.contains_key(sym) {
+            let b = crate::breakdown::breakdown(row, &mine, &cells)?;
+            breakdowns.insert(sym.clone(), serde_json::to_value(b)?);
+        }
+    }
+    let checks = crate::check::check(&j, &a, &samples, sample_ms, &opt.params)?;
     // 存储里的 markout 报告去掉逐笔部分（逐笔在 markouts 表里）。
     let mut markout_json = serde_json::Map::new();
     for (sym, rep) in &a.markout {
@@ -281,6 +296,8 @@ pub fn import_dir(
         summary: summary.as_ref().map(|s| s.0.trim()),
         meta: meta.as_ref().map(|m| m.0.trim()),
         sample_ms,
+        breakdown: Value::Object(breakdowns),
+        checks: serde_json::to_value(&checks)?,
         fills: &a.fills,
         markouts: &markouts,
         curves: &curves,
