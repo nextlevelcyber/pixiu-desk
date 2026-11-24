@@ -1,0 +1,28 @@
+# pixiu-desk 的 systemd unit（ledger 机器）。安装步骤见 docs/deploy.md；在主机上安装、启用、
+# 启动都要所有者在当次会话里批准。
+[Unit]
+Description=Pixiu Desk（个人只读后台）
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pixiu-desk
+Group=pixiu-desk
+ExecStart=/usr/local/bin/pixiu-desk serve --config /etc/pixiu-desk/desk.toml
+Restart=on-failure
+RestartSec=5
+# desk 只写自己的数据目录。
+StateDirectory=pixiu-desk
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ReadWritePaths=/var/lib/pixiu-desk
+# 与 Prometheus 同机：限制资源，避免影响它（t4g.small：2 vCPU，2 GiB）。
+MemoryMax=768M
+CPUQuota=150%
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

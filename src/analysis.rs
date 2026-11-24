@@ -138,6 +138,8 @@ pub fn fills(j: &Journal, symbols: &BTreeMap<i64, String>, p: &Params) -> Vec<Fi
 /// 一个订单的手续费（最后一次终态推送的各币种条目）。
 #[derive(Debug, Clone)]
 pub struct OrderFee {
+    /// 采用的那次推送的记录时间（累计曲线按它计入手续费）。
+    pub ts: i64,
     pub symbol: String,
     pub entries: Vec<(String, Fx)>,
 }
@@ -175,6 +177,7 @@ pub fn order_fees(j: &Journal, symbols: &BTreeMap<i64, String>) -> BTreeMap<Stri
                     (
                         stamp,
                         OrderFee {
+                            ts: r.ts,
                             symbol: symbol_of(symbols, r.int("instrument")),
                             entries: vec![entry],
                         },
@@ -611,6 +614,76 @@ pub fn pnl(
                 total: total.to_plain(),
             },
         );
+    }
+    Ok(out)
+}
+
+/// 累计盈亏曲线上的一个点（按 Bitget 中间价逐点计价）。
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CurvePoint {
+    pub ts: i64,
+    pub position: Fx,
+    pub realised: Fx,
+    pub unrealised: Fx,
+    pub fees: Fx,
+    pub total: Fx,
+    pub mid: Fx,
+}
+
+/// 一个合约的累计盈亏曲线：在样本时间上每隔 `step_ns` 取一点（第一个样本起），把该时刻（含）之前的
+/// 成交和手续费计入 FIFO，未平部分按该样本的 Bitget 中间价计价。最后一个样本总是输出，所以曲线终点与
+/// [`pnl`] 在窗口结束时的 total 一致（mark 取同一个样本时）。
+pub fn pnl_curve(
+    fills: &[&Fill],
+    fees: &[&OrderFee],
+    samples: &[Sample],
+    step_ns: i64,
+) -> Result<Vec<CurvePoint>, FxError> {
+    let mut fee_events: Vec<(i64, Fx)> = Vec::new();
+    for f in fees {
+        let mut sum = Fx::ZERO;
+        for (_, v) in &f.entries {
+            sum = sum.plus(*v)?;
+        }
+        fee_events.push((f.ts, sum));
+    }
+    fee_events.sort_by_key(|e| e.0);
+    let mut out = Vec::new();
+    let (mut fi, mut ei) = (0usize, 0usize);
+    let mut applied: Vec<Fill> = Vec::new();
+    let mut fee_sum = Fx::ZERO;
+    let mut next_t: Option<i64> = None;
+    for (k, s) in samples.iter().enumerate() {
+        let last = k + 1 == samples.len();
+        if !last && next_t.is_some_and(|t| s.ts < t) {
+            continue;
+        }
+        next_t = Some(s.ts + step_ns);
+        while fi < fills.len() && fills[fi].ts <= s.ts {
+            applied.push(fills[fi].clone());
+            fi += 1;
+        }
+        while ei < fee_events.len() && fee_events[ei].0 <= s.ts {
+            fee_sum = fee_sum.plus(fee_events[ei].1)?;
+            ei += 1;
+        }
+        let (realised, lots) = fifo(applied.iter())?;
+        let mid = s.bitget_mid()?;
+        let mut unreal = Fx::ZERO;
+        let mut pos = Fx::ZERO;
+        for l in &lots {
+            unreal = unreal.plus(l.qty.times(mid.minus(l.price)?)?.mul_int(l.sign)?)?;
+            pos = pos.plus(l.qty.mul_int(l.sign)?)?;
+        }
+        out.push(CurvePoint {
+            ts: s.ts,
+            position: pos,
+            realised,
+            unrealised: unreal,
+            fees: fee_sum,
+            total: realised.plus(unreal)?.minus(fee_sum)?,
+            mid,
+        });
     }
     Ok(out)
 }

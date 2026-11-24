@@ -101,3 +101,42 @@ fn markout_sign_and_units() {
         .expect("binance");
     assert_eq!(bn.bps.to_plain(), "-100");
 }
+
+#[test]
+fn pnl_curve_marks_open_lots_and_counts_fees() {
+    let s = |ts: i64, mid: &str| Sample {
+        ts,
+        bitget_bid: Fx::parse(mid).expect("价"),
+        bitget_ask: Fx::parse(mid).expect("价"),
+        binance_bid: Fx::parse(mid).expect("价"),
+        binance_ask: Fx::parse(mid).expect("价"),
+    };
+    let samples = [
+        s(0, "100"),
+        s(5, "101"),
+        s(10, "105"),
+        s(15, "104"),
+        s(20, "103"),
+    ];
+    let buy = fill(4, Side::Buy, "100", "1");
+    let sell = fill(12, Side::Sell, "106", "1");
+    let fee = OrderFee {
+        ts: 12,
+        symbol: "BTCUSDT".into(),
+        entries: vec![("USDT".into(), Fx::parse("0.5").expect("费"))],
+    };
+    let c = pnl_curve(&[&buy, &sell], &[&fee], &samples, 10).expect("曲线");
+    let got: Vec<(i64, String, String)> = c
+        .iter()
+        .map(|p| (p.ts, p.position.to_plain(), p.total.to_plain()))
+        .collect();
+    // 0：空仓；10：持 1 按 105 计价 +5；20（最后一个样本，总是输出）：已平，6 − 0.5。
+    assert_eq!(
+        got,
+        vec![
+            (0, "0".into(), "0".into()),
+            (10, "1".into(), "5".into()),
+            (20, "0".into(), "5.5".into()),
+        ]
+    );
+}

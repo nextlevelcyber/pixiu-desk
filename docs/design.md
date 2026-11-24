@@ -1,7 +1,7 @@
 # Pixiu Desk 设计文档 v0
 
 - 日期：2026-11-24
-- 状态：草案，待你确认
+- 状态：P1 进行中（2026-11-24 起）；第 12 节的问题已由所有者回答
 - 决策依据：Pixiu 仓库 `docs/plans/handoff/2026-11-24-OWNER-desk-console.md`
 
 ## 1. 目标
@@ -147,6 +147,13 @@ desk 的 ingest 发现 `backtests/<run-id>/` 后入库，回测结果会自动�
 2. **研究副本从 2026-10-21 开始才有。** 更早的 run 只有 Prometheus 里的预计算曲线，没有逐笔 markout。
 3. **没有 `ledger sync`（Pixiu M10.4 仍延后）。** 资金费明细、你的手工平仓不在 journal 里，只体现在权益线里。desk 把这一块显示为「体系外」，不逐条拆分。
 
+4. **研究桶里还没有任何 journal（2026-11-24 只读核查）。** 桶里只有 `capture/` 这一个 label，日期
+   2026-10-23 到 10-28（6 天的 Binance 和 Bitget 公共录制），之后没有新文件。交易主机的 journal 从来没有
+   上传过，所以实盘运行的逐笔 markout 目前只能从交易主机的证据目录（`/var/lib/pixiu-evidence/<run>/`）
+   取。把实盘运行放进 `desk/live/<run-id>/` 需要交易主机上的一次操作（第二期，单独批准）。
+5. **三台机器（pixiu-host c7a.2xlarge、pixiu-ledger t4g.small、pixiu-capture c7a.large）当时都已停机。**
+   ledger 是 ARM64，desk 要按 ARM64 构建（`docs/deploy.md`）。
+
 ## 9. Grafana 退役
 
 1. 31 条告警规则改写为 Prometheus 原生 alerting rules，部署到 ledger 机器的 Prometheus。desk 读 `/api/v1/alerts` 并显示在总览顶部。
@@ -172,13 +179,16 @@ desk 的 ingest 发现 `backtests/<run-id>/` 后入库，回测结果会自动�
 
 ### P1：盈亏和 markout（最低要求）
 
-- [ ] 仓库骨架：workspace、`scripts/check.sh`（fmt、clippy、test）、AGENTS.md
-- [ ] journal 解析加 FIFO 加 markout，以 `live_report.py --json` 为黄金样本逐格比对
-- [ ] `.pxr` 读取（格式见 Pixiu spec 4.6、`scripts/research/pxr.py`），产出 mids
-- [ ] S3 ingest，按 sha256 幂等
-- [ ] Prometheus 查询，总览页和实盘页
-- [ ] 分析页：瀑布拆分、markout、数据核对
-- [ ] systemd unit 加部署说明（在 ledger 机器上安装需要你批准）
+- [x] 仓库骨架：Cargo 工程、`scripts/check.sh`（fmt、clippy、test）、AGENTS.md
+- [x] journal 解析加 FIFO 加 markout，以 `live_report.py --json` 为黄金样本逐格比对（`tests/golden.rs`）
+- [x] `.pxr` 读取和联合采样；1 秒采样与 Pixiu 回测的 basis TSV 在共同时刻逐行相同（3599 行）
+- [x] 运行目录导入（SQLite，按 sha256 幂等），S3 同步（`aws s3 sync` 后逐目录导入）
+- [x] Prometheus 只读代理，总览页（进程、合约、告警、最近运行）和实盘页（Grafana 两个看板的查询）
+- [x] 运行详情页：累计盈亏曲线、价格与成交点、markout（均值和中位数、逐笔散点、按 level）、成交表、回测参数；对比页
+- [x] systemd unit 加部署说明（`docs/deploy.md`；在 ledger 机器上安装需要你批准）
+- [ ] 瀑布拆分（成交、库存、手续费、资金费、体系外）和数据核对页
+- [ ] 在 ledger 机器上部署（ARM64 构建，需要你批准）
+- [ ] 真实实盘运行的导入（等第 8 节第 4 条的 journal 上传）
 
 **验收**：用 run 8 到 11 的研究副本，网页上的 markout 和 `live_report.py` 一致，实盘曲线和 Grafana 一致。
 
@@ -194,9 +204,9 @@ desk 的 ingest 发现 `backtests/<run-id>/` 后入库，回测结果会自动�
 
 - Ladder 和在场单视图、单笔回放泳道、当天 markout（按小时上传）、受控写操作（loopback 桥接加鉴权）。
 
-## 12. 需要你确认的问题
+## 12. 所有者的回答（2026-11-24）
 
-1. 文档和界面语言：页面用中文，代码、注释和提交信息用英文（和 Pixiu 一致）。可以吗？
-2. S3 研究桶的名字和 host label：你提供，或者我从主机配置里读（读取需要你批准）。
-3. markout 的 mids 降采样定为 100 ms，可以吗？（`live_report.py` 用的是 basis 采样间隔，回测默认 `--basis-interval-ms`。）
-4. 「回测进行中禁止启动实盘」的锁：要加进 Pixiu unit 的 `ExecStartPre` 吗？还是只靠你自己的习惯加上脚本单向检查？
+1. 文档、注释、提交信息、界面全部用中文（标识符用英文）。
+2. 研究桶名由我去读（只读）：结果只告诉所有者，不写进仓库（见 aws-host-ops 技能的规则）。
+3. markout 的中间价按 100 ms 采样：同意。回测目录里有 basis TSV 时用它（1 秒），没有时从 `.pxr` 按 100 ms 采样。
+4. 「回测进行中禁止启动实盘」只用脚本单向检查，不改 Pixiu 的 unit。

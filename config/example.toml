@@ -1,0 +1,35 @@
+# pixiu-desk 的配置示例。部署时复制到 /etc/pixiu-desk/desk.toml 并替换 <...> 占位符。
+# 真实的桶名、端口、路径只写在部署机器上，不进仓库。
+
+[server]
+# 只监听 loopback；访问方式是 SSM 端口转发（docs/deploy.md）。
+listen = "127.0.0.1:<DESK_PORT>"
+# SQLite 数据库文件。
+db = "/var/lib/pixiu-desk/desk.sqlite"
+
+[prometheus]
+# ledger 机器上的 Prometheus（loopback）。留空则实盘页显示"未配置"。
+url = "http://127.0.0.1:<PROMETHEUS_PORT>"
+# 单次查询超时（秒）。
+timeout_s = 10
+
+[sync]
+# 研究桶；留空则不同步，只能用 `pixiu-desk import` 手工导入。
+bucket = "<BUCKET>"
+# 每个前缀下的每个子目录是一次运行（docs/design.md 第 6 节）。
+prefixes = ["desk/backtests/", "desk/live/"]
+# 同步下来的文件放在这里（每次运行一个子目录）。
+data_dir = "/var/lib/pixiu-desk/data"
+# 同步间隔（秒）；0 表示只在启动时同步一次。
+interval_s = 600
+# aws CLI 的路径和区域。
+aws = "aws"
+region = "<REGION>"
+
+[analysis]
+# 从 .pxr 生成 markout 样本的间隔（毫秒）。
+sample_ms = 100
+# 累计盈亏曲线的步长（毫秒）。
+curve_ms = 10000
+# markout 样本的容差（秒，十进制字符串）。
+markout_tol_s = "1.5"
